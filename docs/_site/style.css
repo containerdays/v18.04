@@ -50,7 +50,7 @@ p {
 }
 
 a {
-    color: #219ab3;
+    color: #2f962b;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -300,17 +300,17 @@ a:focus {
 }
 
 .btn-default {
-    border: 1px solid #219ab3;
-    color: #219ab3;
+    border: 1px solid #2f962b;
+    color: #2f962b;
     background-color: transparent;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #219ab3;
+    border: 1px solid #2f962b;
     outline: 0;
     color: #000000;
-    background-color: #219ab3;
+    background-color: #2f962b;
 }
 
 ul.banner-social-buttons {

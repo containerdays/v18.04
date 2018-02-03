@@ -1,29 +1,23 @@
 # Site settings
-title: Grayscale
-email: your-email@domain.com
-url: https://example.github.io
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: Japan Container Days v18.04
+email: info@thinkit.co.jp
+url: http://containerdays.jp/
+description: "[4/19開催]KubernetesやDockerを中心としたコンテナ活用の現状をひとまとめにした開発者のためのイベント"
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
   primary-dark: '#000000'
-  links: '#219ab3'
+  links: '#2f962b'
 
 # Footer settings
-footer: Your Website
+footer: Impress Corporation, All rights reserved.
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: https://twitter.com/SBootstrap
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket
-    url: http://bitbucket.org/jekyll
+    url: https://twitter.com/containerdaysjp
   - title: github
-    url: https://github.com/IronSummitMedia/startbootstrap
+    url: https://github.com/containerdays
 
 # Build settings
 markdown: kramdown
