@@ -1,5 +1,5 @@
 # Site settings
-title: Japan Container Days v18.04
+title: Japan Container Days v18.12
 email: info@thinkit.co.jp
 baseurl: "https://containerdays.jp"
 url: "https://containerdays.jp"
@@ -17,6 +17,8 @@ footer: Impress Corporation, All rights reserved.
 social:
   - title: twitter
     url: https://twitter.com/containerdaysjp
+  - title: facebook
+    url: https://www.facebook.com/JapanContainerDays/
   - title: github
     url: https://github.com/containerdays
 
