@@ -7,11 +7,11 @@
     font-size: 14px;
   }
   #main-slide .carousel-item .carousel-caption .heading {
-    font-size: 20px;
+    font-size: 40px;
     margin-top: 5px;
   }
   #main-slide .carousel-item .carousel-caption p {
-    font-size: 13px;
+    font-size: 26px;
   }
   #hero-area .contents .head-title {
     font-size: 40px;
@@ -101,10 +101,10 @@
     top: 32%;
   }
   #main-slide .carousel-item .carousel-caption .heading {
-    font-size: 20px;
+    font-size: 40px;
   }
   #main-slide .carousel-item .carousel-caption p {
-    font-size: 13px;
+    font-size: 26px;
   }
   .countdown-timer .heading-count h2 {
     font-size: 25px;
