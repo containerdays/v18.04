@@ -1,0 +1,2858 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="title" content="JapanContainerDays v18.12｜EventRegist（イベントレジスト）" />
+<meta name="keywords" content="JapanContainerDays v18.12,イベントレジスト,イベレジ,Event,Regist,イベント,event,イベント作成,チケット発行,イベント集金" />
+<meta name="description" content="「JapanContainerDays v18.12」の告知ページです。" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+<meta property="og:title" content="JapanContainerDays v18.12｜EventRegist（イベントレジスト）" />
+<meta property="og:type" content="eventregist:event" />
+<meta property="og:image" content="https://er-static.s3.amazonaws.com/uploads/events/2a83175305cc31a69dc3b39c0748ab4445d03dbe.png" />
+<meta property="og:site_name" content="JapanContainerDays v18.12" />
+<meta property="og:description" content="[12/3-5開催]コンテナ活用/クラウドネイティブの現状をひとまとめにした開発者のためのイベント" />
+<meta property="og:url" content="https://eventregist.com/e/containerdays1812" />
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:site" content="@eventregist" />
+<meta property="twitter:description" content="[12/3-5開催]コンテナ活用/クラウドネイティブの現状をひとまとめにした開発者のためのイベント" />
+<meta property="twitter:title" content="JapanContainerDays v18.12" />
+<meta property="fb:app_id" content="276382125721993" />
+<title>JapanContainerDays v18.12｜EventRegist（イベントレジスト）</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="https://d2ocgu9c5u3249.cloudfront.net/css/v2/base.css" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="https://d2ocgu9c5u3249.cloudfront.net/css/event.v2.css" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="https://d2ocgu9c5u3249.cloudfront.net/css/v2/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="https://d2ocgu9c5u3249.cloudfront.net/css/v2/session.css" />
+<link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="https://d2ocgu9c5u3249.cloudfront.net/css/v2/sphone.event.css" />
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/html5.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/v2/jquery.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/i18n.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/v2/common.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/heightLine.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/v2/jquery-ui.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/v2/session.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/v2/jquery.smoothScroll.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/plugin/jquery.ba-resize.min.js"></script>
+<script type="text/javascript" src="https://eventregist.com/js/routing.js"></script>
+<script type="text/javascript" src="https://d2ocgu9c5u3249.cloudfront.net/js/sphone/event.v2.js"></script>
+<script type="text/javascript">
+  var _fout_queue = _fout_queue || {}; if (_fout_queue.segment === void 0) _fout_queue.segment = {};
+  if (_fout_queue.segment.queue === void 0) _fout_queue.segment.queue = [];
+
+  _fout_queue.segment.queue.push({
+      'user_id': 7180,
+      'params': []
+  });
+
+  (function() {
+    var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true;
+    el.src = (('https:' == document.location.protocol) ? 'https://' : 'http://') + 'js.fout.jp/segmentation.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(el, s);
+  })();
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-26071627-1']);
+_gaq.push(['_setDomainName', 'eventregist.com']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['b._setAccount', 'UA-119115-12']);
+_gaq.push(['b._setDomainName', 'none']);
+_gaq.push(['b._setAllowLinker', true]);
+_gaq.push(['b._trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script></head>
+<body>
+
+
+
+
+
+<div id="LW">
+<div id="SDM">
+    <div id="SDM1">
+      <ul>
+          <li class="iconUserA">
+          <a href="/account/info/edit">suzuki-n@impress.co.jp</a>
+            </li>
+          <li>
+            <a href="/user/notification/list">お知らせ</a>
+          </li>
+          <li>
+          <a href="/account/info/edit">アカウント編集</a>
+            </li>
+          <li>
+          <a href="/ticket/list">マイチケット</a>
+            </li>
+          <li>
+          <a href="/logout">ログアウト</a>
+            </li>
+          <li>
+              <a href="/e/containerdays1812/contact/new" target="_self">主催者へのお問い合わせ</a>
+            </li>
+        </ul>
+        <h2>言語</h2>
+        <ul>
+          <li class="selected">
+              <a href="?lang=ja_JP">日本語</a>
+            </li>
+          <li class="">
+              <a href="?lang=en_US">English</a>
+            </li>
+          <li class="">
+              <a href="?lang=id_ID">Bahasa Indonesia</a>
+            </li>
+          <li class="">
+              <a href="?lang=zh_TW">中文(繁體)</a>
+            </li>
+          <li class="">
+              <a href="?lang=th_TH">ภาษาไทย</a>
+            </li>
+        </ul>
+        <h2>EventRegist Co., Ltd.</h2>
+        <ul>
+          <li>
+          <a href="http://info.eventregist.com/ja/tos">ご利用規約</a>
+            </li>
+          <li>
+          <a href="http://info.eventregist.com/ja/privacypolicy">プライバシーポリシー</a>
+            </li>
+        </ul>
+        <p class="copy">Copyright &copy; EventRegist Co., Ltd. All rights reserved.</p>
+    </div><!-- /SDM1 -->
+</div>
+
+<div id="LW1">
+
+<div id="SPGHeader" class="typeA">
+<a href="javascript:void(0)" onClick="SDM()" class="btnSM">&nbsp;</a>
+<h1>&nbsp;</h1>
+<a href="/e/containerdays1812/contact/new" target="_self" class="btnHLP">&nbsp;</a>
+</div><!-- /SPGHeader -->
+
+    <div id="header"><div id="headerW1">
+        <h1><a href="/" title="EventRegist"><img alt="EventRegist" width="115" height="25" src="/img/event/logoHeader.png" /></a></h1>
+
+        <div id="headNavBtns1">
+        <ul class="tite">
+            <li><a class="CA1" href="https://containerdays.jp/">JapanContainerDays v18.12</a></li>
+        </ul>
+        </div>
+
+        <div id="headLoginBox1">
+          <ul>
+            <li class="_dropDownHover"><a class="CA1" href="https://eventregist.com/e/containerdays1812">EventRegistの申し込みページへ</a></li>
+          </ul>
+</div>
+       </div>
+    </div><!-- /header/headerW1 -->
+
+
+
+
+<style>
+/** カテゴリーのユーザー指定カラー (システム側で指定するスタイル) **/
+.cat_cdaa1521209dcb30da56da52e3089b15 a, .cat_cdaa1521209dcb30da56da52e3089b15 p, .cat_cdaa1521209dcb30da56da52e3089b15 a span, .inner .body .catAndTag .cat_cdaa1521209dcb30da56da52e3089b15 p, .cat_cdaa1521209dcb30da56da52e3089b15_main .boxBody .detail .inner { border-left-color:#4caf50 !important; }
+.cat_cdaa1521209dcb30da56da52e3089b15 .boxBody .head { border-top-color:#4caf50; }
+.cat_cdaa1521209dcb30da56da52e3089b15_main .boxBody .head { border-top-color:#4caf50 !important; }
+.cat_cdaa1521209dcb30da56da52e3089b15_main .boxBody .detail .inner .iconCheck { background-color:#4caf50 !important; }
+.cat_f02f4bb897b8adb1d0ce7996fc83fa04 a, .cat_f02f4bb897b8adb1d0ce7996fc83fa04 p, .cat_f02f4bb897b8adb1d0ce7996fc83fa04 a span, .inner .body .catAndTag .cat_f02f4bb897b8adb1d0ce7996fc83fa04 p, .cat_f02f4bb897b8adb1d0ce7996fc83fa04_main .boxBody .detail .inner { border-left-color:#2196f3 !important; }
+.cat_f02f4bb897b8adb1d0ce7996fc83fa04 .boxBody .head { border-top-color:#2196f3; }
+.cat_f02f4bb897b8adb1d0ce7996fc83fa04_main .boxBody .head { border-top-color:#2196f3 !important; }
+.cat_f02f4bb897b8adb1d0ce7996fc83fa04_main .boxBody .detail .inner .iconCheck { background-color:#2196f3 !important; }
+.cat_24cd171062c9ddcbe160a9b181cb3cb7 a, .cat_24cd171062c9ddcbe160a9b181cb3cb7 p, .cat_24cd171062c9ddcbe160a9b181cb3cb7 a span, .inner .body .catAndTag .cat_24cd171062c9ddcbe160a9b181cb3cb7 p, .cat_24cd171062c9ddcbe160a9b181cb3cb7_main .boxBody .detail .inner { border-left-color:#e91e63 !important; }
+.cat_24cd171062c9ddcbe160a9b181cb3cb7 .boxBody .head { border-top-color:#e91e63; }
+.cat_24cd171062c9ddcbe160a9b181cb3cb7_main .boxBody .head { border-top-color:#e91e63 !important; }
+.cat_24cd171062c9ddcbe160a9b181cb3cb7_main .boxBody .detail .inner .iconCheck { background-color:#e91e63 !important; }
+.cat_ae99644a27870d1e38811bb0637169b4 a, .cat_ae99644a27870d1e38811bb0637169b4 p, .cat_ae99644a27870d1e38811bb0637169b4 a span, .inner .body .catAndTag .cat_ae99644a27870d1e38811bb0637169b4 p, .cat_ae99644a27870d1e38811bb0637169b4_main .boxBody .detail .inner { border-left-color:#8bc34a !important; }
+.cat_ae99644a27870d1e38811bb0637169b4 .boxBody .head { border-top-color:#8bc34a; }
+.cat_ae99644a27870d1e38811bb0637169b4_main .boxBody .head { border-top-color:#8bc34a !important; }
+.cat_ae99644a27870d1e38811bb0637169b4_main .boxBody .detail .inner .iconCheck { background-color:#8bc34a !important; }
+.cat_1816c3644a6e6c0eb034e7c98752281d a, .cat_1816c3644a6e6c0eb034e7c98752281d p, .cat_1816c3644a6e6c0eb034e7c98752281d a span, .inner .body .catAndTag .cat_1816c3644a6e6c0eb034e7c98752281d p, .cat_1816c3644a6e6c0eb034e7c98752281d_main .boxBody .detail .inner { border-left-color:#ffeb3b !important; }
+.cat_1816c3644a6e6c0eb034e7c98752281d .boxBody .head { border-top-color:#ffeb3b; }
+.cat_1816c3644a6e6c0eb034e7c98752281d_main .boxBody .head { border-top-color:#ffeb3b !important; }
+.cat_1816c3644a6e6c0eb034e7c98752281d_main .boxBody .detail .inner .iconCheck { background-color:#ffeb3b !important; }
+.cat_6d456e69b5d95c08c3a34811cd1ed039 a, .cat_6d456e69b5d95c08c3a34811cd1ed039 p, .cat_6d456e69b5d95c08c3a34811cd1ed039 a span, .inner .body .catAndTag .cat_6d456e69b5d95c08c3a34811cd1ed039 p, .cat_6d456e69b5d95c08c3a34811cd1ed039_main .boxBody .detail .inner { border-left-color:#ff9800 !important; }
+.cat_6d456e69b5d95c08c3a34811cd1ed039 .boxBody .head { border-top-color:#ff9800; }
+.cat_6d456e69b5d95c08c3a34811cd1ed039_main .boxBody .head { border-top-color:#ff9800 !important; }
+.cat_6d456e69b5d95c08c3a34811cd1ed039_main .boxBody .detail .inner .iconCheck { background-color:#ff9800 !important; }
+.cat_618b1aa4770c736f985b2c0cd0781c2c a, .cat_618b1aa4770c736f985b2c0cd0781c2c p, .cat_618b1aa4770c736f985b2c0cd0781c2c a span, .inner .body .catAndTag .cat_618b1aa4770c736f985b2c0cd0781c2c p, .cat_618b1aa4770c736f985b2c0cd0781c2c_main .boxBody .detail .inner { border-left-color:#795548 !important; }
+.cat_618b1aa4770c736f985b2c0cd0781c2c .boxBody .head { border-top-color:#795548; }
+.cat_618b1aa4770c736f985b2c0cd0781c2c_main .boxBody .head { border-top-color:#795548 !important; }
+.cat_618b1aa4770c736f985b2c0cd0781c2c_main .boxBody .detail .inner .iconCheck { background-color:#795548 !important; }
+.cat_3a2d27d38acc163311fe5808d9172f7c a, .cat_3a2d27d38acc163311fe5808d9172f7c p, .cat_3a2d27d38acc163311fe5808d9172f7c a span, .inner .body .catAndTag .cat_3a2d27d38acc163311fe5808d9172f7c p, .cat_3a2d27d38acc163311fe5808d9172f7c_main .boxBody .detail .inner { border-left-color:#607d8b !important; }
+.cat_3a2d27d38acc163311fe5808d9172f7c .boxBody .head { border-top-color:#607d8b; }
+.cat_3a2d27d38acc163311fe5808d9172f7c_main .boxBody .head { border-top-color:#607d8b !important; }
+.cat_3a2d27d38acc163311fe5808d9172f7c_main .boxBody .detail .inner .iconCheck { background-color:#607d8b !important; }
+</style>
+<style>
+/** タグのユーザー指定カラー (システム側で指定するスタイル) **/
+.boxTag.tag_8966f9c1d8cdeccf5968a3490eb2682b, .typeTag .tag_8966f9c1d8cdeccf5968a3490eb2682b { background-color:#f44336; } /* 背景色 */
+.boxTag.tag_8966f9c1d8cdeccf5968a3490eb2682b em, .typeTag .tag_8966f9c1d8cdeccf5968a3490eb2682b a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_8966f9c1d8cdeccf5968a3490eb2682b { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_6fb84fba2d74a5bf00923796420d4a8f, .typeTag .tag_6fb84fba2d74a5bf00923796420d4a8f { background-color:#e91e63; } /* 背景色 */
+.boxTag.tag_6fb84fba2d74a5bf00923796420d4a8f em, .typeTag .tag_6fb84fba2d74a5bf00923796420d4a8f a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_6fb84fba2d74a5bf00923796420d4a8f { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_73cac1f589e0651758f45daa91370f13, .typeTag .tag_73cac1f589e0651758f45daa91370f13 { background-color:#9c27b0; } /* 背景色 */
+.boxTag.tag_73cac1f589e0651758f45daa91370f13 em, .typeTag .tag_73cac1f589e0651758f45daa91370f13 a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_73cac1f589e0651758f45daa91370f13 { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_6797295aeeb541d3d716e337f11e159c, .typeTag .tag_6797295aeeb541d3d716e337f11e159c { background-color:#673ab7; } /* 背景色 */
+.boxTag.tag_6797295aeeb541d3d716e337f11e159c em, .typeTag .tag_6797295aeeb541d3d716e337f11e159c a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_6797295aeeb541d3d716e337f11e159c { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_279710f199ae609ebb847d6e9736b552, .typeTag .tag_279710f199ae609ebb847d6e9736b552 { background-color:#3f51b5; } /* 背景色 */
+.boxTag.tag_279710f199ae609ebb847d6e9736b552 em, .typeTag .tag_279710f199ae609ebb847d6e9736b552 a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_279710f199ae609ebb847d6e9736b552 { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_cc2789a3b2238657f4e7148e6462c802, .typeTag .tag_cc2789a3b2238657f4e7148e6462c802 { background-color:#2196f3; } /* 背景色 */
+.boxTag.tag_cc2789a3b2238657f4e7148e6462c802 em, .typeTag .tag_cc2789a3b2238657f4e7148e6462c802 a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_cc2789a3b2238657f4e7148e6462c802 { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_0a3efaa34ae2a4764cc6efd974cd1092, .typeTag .tag_0a3efaa34ae2a4764cc6efd974cd1092 { background-color:#03a9f4; } /* 背景色 */
+.boxTag.tag_0a3efaa34ae2a4764cc6efd974cd1092 em, .typeTag .tag_0a3efaa34ae2a4764cc6efd974cd1092 a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_0a3efaa34ae2a4764cc6efd974cd1092 { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_1e8455480ff3fa604cf3a242b4b69320, .typeTag .tag_1e8455480ff3fa604cf3a242b4b69320 { background-color:#009688; } /* 背景色 */
+.boxTag.tag_1e8455480ff3fa604cf3a242b4b69320 em, .typeTag .tag_1e8455480ff3fa604cf3a242b4b69320 a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_1e8455480ff3fa604cf3a242b4b69320 { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_5dd17e731d3131677307fe22d9e11711, .typeTag .tag_5dd17e731d3131677307fe22d9e11711 { background-color:#8bc34a; } /* 背景色 */
+.boxTag.tag_5dd17e731d3131677307fe22d9e11711 em, .typeTag .tag_5dd17e731d3131677307fe22d9e11711 a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_5dd17e731d3131677307fe22d9e11711 { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_19e9b2ca1766200718e20139b2e8ffca, .typeTag .tag_19e9b2ca1766200718e20139b2e8ffca { background-color:#ffeb3b; } /* 背景色 */
+.boxTag.tag_19e9b2ca1766200718e20139b2e8ffca em, .typeTag .tag_19e9b2ca1766200718e20139b2e8ffca a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_19e9b2ca1766200718e20139b2e8ffca { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_cbd29d3e7f8635e3d8832590a2e17fbc, .typeTag .tag_cbd29d3e7f8635e3d8832590a2e17fbc { background-color:#ffc107; } /* 背景色 */
+.boxTag.tag_cbd29d3e7f8635e3d8832590a2e17fbc em, .typeTag .tag_cbd29d3e7f8635e3d8832590a2e17fbc a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_cbd29d3e7f8635e3d8832590a2e17fbc { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+.boxTag.tag_9c873575296a4a93c004d1377638255f, .typeTag .tag_9c873575296a4a93c004d1377638255f { background-color:#ff5722; } /* 背景色 */
+.boxTag.tag_9c873575296a4a93c004d1377638255f em, .typeTag .tag_9c873575296a4a93c004d1377638255f a span { color:#ffffff; } /* 文字色 */
+.boxTagContainer .tag_9c873575296a4a93c004d1377638255f { display:inline-block !important; } /* 「タイムテーブルに表示」がON */
+</style>
+
+
+
+
+
+    <h2 class="sessionHeading fixed _heading_fix" id="h_day1_fix" style="display:none;">
+  <div class="headingIn _windowWidth">
+  <strong>2018/12/04</strong>
+  <span>(火)</span>
+  <div class="jumpBtnsB clearfix">
+    <a href='#_day1' class='selected firstChild'><span>12/04</span></a>
+<a href='#_day2' class='down lastChild'><span>12/05</span></a>
+  </div>
+  </div>
+</h2>
+      <h2 class="sessionHeading fixed _heading_fix" id="h_day2_fix" style="display:none;">
+  <div class="headingIn _windowWidth">
+  <strong>2018/12/05</strong>
+  <span>(水)</span>
+  <div class="jumpBtnsB clearfix">
+    <a href='#_day1' class='up firstChild'><span>12/04</span></a>
+<a href='#_day2' class='selected lastChild'><span>12/05</span></a>
+  </div>
+  </div>
+</h2>
+      
+
+<div id="page">
+
+<script type="text/javascript">
+<!--
+function choiceSession() {
+  document.forms["order"].submit();
+}
+
+__multiSetting = 0;
+
+//-->
+</script>
+<div id="pageW1" class="APkg">
+
+<form name="order" method="post" action="https://eventregist.com/e/containerdays1812/45b1f9c436db04c57a7681411a3bc4c8/sessionNew"><input type="hidden" name="temp_attendee[id]" value="3052739" id="temp_attendee_id" /><input type="hidden" name="temp_attendee[_csrf_token]" value="407a5f1c6468d17c1d904ca66eb04821" id="temp_attendee__csrf_token" />
+
+
+<div id="header_nav" class="_tableWidth">
+  <div id="header_nav_in" class="_windowWidth">
+
+    <div class="foot">
+
+      <div class="searchBox category clearfix">
+        <span class="searchBtnSet">
+          <a href="javascript:void(0)" class="btn" onclick="searchBtn('cat')" id="searchBtn_cat"><span>セッションを絞り込む</span><em>&nbsp;</em></a>
+          <div class="list" id="searchList_cat">
+            <p class="h">&nbsp;</p>
+            <ul class="selectBlockA clearfix">
+              <ol>
+                <h3>絞り込み項目1:</h3>
+                <li class="cat_cdaa1521209dcb30da56da52e3089b15"><a href="javascript:void(0)"><span>Beginner - 初級者</span></a></li>
+                <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><a href="javascript:void(0)"><span>Intermediate - 中級者</span></a></li>
+                <li class="cat_24cd171062c9ddcbe160a9b181cb3cb7"><a href="javascript:void(0)"><span>Advanced - 上級者</span></a></li>
+                <li class="cat_ae99644a27870d1e38811bb0637169b4"><a href="javascript:void(0)"><span>architect - システム設計</span></a></li>
+                <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><a href="javascript:void(0)"><span>developer - システム開発</span></a></li>
+                <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><a href="javascript:void(0)"><span>app-developer - アプリケーション開発</span></a></li>
+                <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><a href="javascript:void(0)"><span>operator/sys-admin - 運用管理/システム管理</span></a></li>
+                <li class="cat_3a2d27d38acc163311fe5808d9172f7c"><a href="javascript:void(0)"><span>CxO/biz - ビジネス層</span></a></li>
+              </ol>
+              <ol class="typeTag">
+                <h3>絞り込み項目2:</h3>
+                <li class="tag_8966f9c1d8cdeccf5968a3490eb2682b"><a href="javascript:void(0)"><span>containerization</span></a></li>
+                <li class="tag_6fb84fba2d74a5bf00923796420d4a8f"><a href="javascript:void(0)"><span>CI/CD</span></a></li>
+                <li class="tag_73cac1f589e0651758f45daa91370f13"><a href="javascript:void(0)"><span>orchestration</span></a></li>
+                <li class="tag_6797295aeeb541d3d716e337f11e159c"><a href="javascript:void(0)"><span>observability</span></a></li>
+                <li class="tag_279710f199ae609ebb847d6e9736b552"><a href="javascript:void(0)"><span>service mesh</span></a></li>
+                <li class="tag_cc2789a3b2238657f4e7148e6462c802"><a href="javascript:void(0)"><span>networking</span></a></li>
+                <li class="tag_0a3efaa34ae2a4764cc6efd974cd1092"><a href="javascript:void(0)"><span>distributed database</span></a></li>
+                <li class="tag_1e8455480ff3fa604cf3a242b4b69320"><a href="javascript:void(0)"><span>container runtime</span></a></li>
+                <li class="tag_5dd17e731d3131677307fe22d9e11711"><a href="javascript:void(0)"><span>serverless</span></a></li>
+                <li class="tag_19e9b2ca1766200718e20139b2e8ffca"><a href="javascript:void(0)"><span>ML</span></a></li>
+                <li class="tag_cbd29d3e7f8635e3d8832590a2e17fbc"><a href="javascript:void(0)"><span>microservices</span></a></li>
+                <li class="tag_9c873575296a4a93c004d1377638255f"><a href="javascript:void(0)"><span>other</span></a></li>
+              </ol>
+            </ul>
+
+          </div>
+       </span><!-- /searchBtnSet -->
+       <span class="searchTabsModule">
+         <ul class="clearfix" id="tabList_cat"></ul>
+         <ul class="clearfix typeTag" id="tabList_tag"></ul>
+       </span><!-- /searchTabsModule -->
+      </div>
+
+    </div><!-- /foot -->
+  </div><!-- /header_nav_in -->
+</div><!-- /header_nav -->
+
+
+<div class="selectSession">
+  <div class="selectSessionBody _tableWidth" id="timeTableArea">
+
+
+    <div class="_anqPos">
+      <a name="_day1" id="_day1" class="anq"></a>
+    </div>
+
+    <h2 class="sessionHeading _heading" id="h_day1">
+      <div class="headingIn _windowWidth">
+      <strong>2018/12/04</strong>
+      <span>(火)</span>
+      </div>
+    </h2>
+    <div limitPos="0" class="timeTableBlock clearfix" sH="8" sM="30" eH="20" eM="20">
+      <div class="timeTableBody">
+        <div width="0" border="0" cellspacing="0" cellpadding="0" class="timetable" data-day="1">
+
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>HALL WEST（2F）</span></h4>
+
+            <div class="box heading wide sh_8 sm_30 min_60"
+            data-day="2018-12-04"
+            data-start-time="08:30"
+            data-end-time="09:30"
+            >
+              <div class="boxBody">
+                <div class="detail">
+                <div class="container">
+                <div class="inner">
+                <div class="head breaktime">
+                  <h3>registration（キーノート開始直前は混雑が予想されます、時間に余裕をもってお越しください）<span>(08:30〜09:30)</span></h3>
+                </div><!-- /head -->
+              </div></div></div></div><!-- /boxBody -->
+            </div>
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c cat_3a2d27d38acc163311fe5808d9172f7c tag_73cac1f589e0651758f45daa91370f13 tag_19e9b2ca1766200718e20139b2e8ffca tag_cbd29d3e7f8635e3d8832590a2e17fbc  sh_9 sm_40 min_150"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="09:40"
+            data-end-time="12:10"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65316]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65316" />              <input type="hidden" name="box_checkin_manager_3052739_65316_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65316" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>K1</span>基調講演／スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                        <li class="cat_3a2d27d38acc163311fe5808d9172f7c"><p><span>CxO/biz - ビジネス層</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    09:40<span>-12:10</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                            <span class="boxTag tag_19e9b2ca1766200718e20139b2e8ffca"><em>ML</em></span>
+                                            <span class="boxTag tag_cbd29d3e7f8635e3d8832590a2e17fbc"><em>microservices</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Microservices on Kubernetes at Mercari - 中島 大一（Mercari）／Kubernetesによる機械学習基盤への挑戦 - 谷脇 大輔（Preferred Networks）／LINEエンジニアを支えるCaaS基盤の今とこれから - 西脇 雄基（LINE）／Cloud Nativeの未来とIBMの取組み (仮) - TBD（IBM）／この他にも数名ゲストスピーカーを調整中</p>
+                  <div class="d"><h2>Microservices on Kubernetes at Mercari</h2>
+<p>Mercariではサービスと組織の拡大に合わせてMonolithアーキテクチャからMicroservicesアーキテクチャへの移行を進めています．我々はこのMicroservicesアーキテクチャのメインの基盤としてKubernetesを採用しています．本セッションではMicroservicesのための基盤という観点でどのようにKubernetesを活用しているかについて紹介します</p>
+<p><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/455f64c7f07197373fa3728a32e317fc42e9190e.jpg" width="200" class="mce-img" /><br />―中島 大一（Taichi Nakashima）Tech Lead<span> </span>Mercari<br />Taichi Nakashima (@deeeet) is a tech lead for the Microservices Platform at Mercari. Prior to Mercari, he was a software engineer at Japanese E-commerce company, working on building internal Platform-as-a-Service. He is Gopher and co-authoer of &ldquo;みんなのGo言語&rdquo; (Japanese Golang book).<br /><br /></p>
+<h2>Kubernetesによる機械学習基盤への挑戦</h2>
+<p>Preferred Networksでは1000個以上のGPUとInfiniBandからなるオンプレミスのクラスターを自社で構築しており、研究者が様々な目的、リソース量、実行時間の機械学習ジョブをKubernetes上で実行して研究成果を出しています。KubernetesはKubeflowの登場など、機械学習基盤としても非常に注目されている一方で、現実的には未だ発展途上となっています。本講演では機械学習基盤としてのKubernetesの導入理由、その実用性と将来性、Preferred Networksの挑戦についてお話しします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/38b23c22d4fbd0ef378036c206b07346a647ea8b.jpg" width="200" class="mce-img" /><br />―谷脇 大輔<span>（</span>DAISUKE TANIWAKI<span>）</span>Engineer<span> </span>Preferred Networks<br />トレンドマイクロにて台湾でWeb Crawler開発したのち、食べログのアメリカ展開のために渡米、帰国後はKaizen PlatformでWeb Page Optimization Platformを開発するなど、国内外の様々な場所でWeb関連の開発経験を積む。2017年4月よりPreferred Networksにて、研究者が利用する研究開発基盤での様々なシステムの導入・開発・運用に携わっている。<br /><br /></p>
+<h2>LINEエンジニアを支えるCaaS基盤の今とこれから</h2>
+<p>近年の機械学習の流行によって多くの機械学習モジュールが実サービスで運用されています。LINE Clovaでも多くの機械学習モジュールが可動しています。機械学習における「学習」まわりのツールが充実してきた一方で、構築した機械学習モジュールの「運用」まわりのツールは多くありません。本セッションでは、Kubernetes上で動作する機械学習モジュールの配信＆管理基盤Druckerをご紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/7227a848ac34c3158c1f053309edf87d62280940.png" width="200" class="mce-img" /><br />―西脇 雄基（Yuki Nishiwaki）Software Engineer LINE Corporation<br />2017年12月にLINE株式会社に入社<br />LINEのインフラで利用しているOSS周りの業務を中心に、OpenStackのカスタマイズ業務やKubernetes as a Serviceの開発業務に従事<br />Kubernete as a Serviceのバックエンドに採用されているRancherの解析にも注力<br /><br /></p>
+<h2>Cloud Nativeの未来とIBMの取組み (仮)</h2>
+<p>TBD - 日本アイ・ビー・エム</p>
+<p><br />この他にも数名ゲストスピーカーを調整中、詳細は追ってアップデートします。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+
+            <div class="box heading wide sh_13 sm_0 min_20"
+            data-day="2018-12-04"
+            data-start-time="13:00"
+            data-end-time="13:20"
+            >
+              <div class="boxBody">
+                <div class="detail">
+                <div class="container">
+                <div class="inner">
+                <div class="head breaktime">
+                  <h3>ランチ休憩（引き続きブース展示やお食事をお楽しみください）<span>(13:00〜13:20)</span></h3>
+                </div><!-- /head -->
+              </div></div></div></div><!-- /boxBody -->
+            </div>
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b  sh_13 sm_20 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65318]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65318" />              <input type="hidden" name="box_checkin_manager_3052739_65318_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65318" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1W1</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">1年間の本番運用でわかったコンテナがチーム開発にもたらしてくれたもの - 永井 勝一郎（コネヒト）</p>
+                  <div class="d"><p>「ママリ」というサービスを、約1年くらいコンテナ基盤で運用する中で得られた知見を発表します。コンテナ化がチーム開発のフローをいかに良くしてくれたかという視点から、出来るだけ実例を元にお話しする予定です。開発環境ではコンテナを使っているが本番はまだ導入していないという方に対して、本番もコンテナ運用してみようという一歩を助けられるような内容が話せればいいなと思っています。</p>
+<ul>
+<li>コンテナ導入で変わったDev,Opsの役割の変化に対する具体例</li>
+<li>ミドルウェアのアップデート</li>
+<li>デプロイフローのリファクタ</li>
+<li>コンテナ導入のメリット</li>
+<li>コンテナオーケストレーションツールは、Amazon ECSを利用</li>
+<li>Fargateの話は間に合えば盛り込む予定です</li>
+</ul>
+<img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/7e0b6311db48b75ef5f4542033678c465e7ae16c.jpg" width="200" class="mce-img" /><br />―永井 勝一郎（Shoichiro Nagai）エンジニア コネヒト株式会社<br />コネヒト株式会社所属のインフラエンジニア(2017年5月〜)<br />前職は、一休.comで7年間働いていました。技術を組み合わせてサービスを作っていくことが好きで、今はDockerでのサービス基盤作りをメインで行っています。一般的に、ウェブオペレーションエンジニアと言われているような領域を得意としていて、ウェブオペレーションというオライリーの本が自分のキャリアのバイブルだったりします。</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b  sh_14 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65323]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65323" />              <input type="hidden" name="box_checkin_manager_3052739_65323_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65323" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1W2</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">レガシーシステムのコンテナ化に挑戦した話 - 和田 亨（CyberAgent）／ミドルウェア〜Webアプリまで全てをHelm化したサービスの運用事例 - 山田 直行（CyberAgent）※ショートセッション2本立て</p>
+                  <div class="d"><h2>レガシーシステムのコンテナ化に挑戦した話</h2>
+<p>レガシーシステムのコンテナ化に挑戦して良かったこと・困ったことについてお話します。</p>
+<ul>
+<li>・VMで稼働しているシステムをコンテナ化した事例</li>
+<li>・Jenkinsでの手動ビルド&amp;capistrano/fabricデプロイをCircleCIで自動化</li>
+<li>・Kubernetesでのログ管理（欠損をなるべく防ぐ）</li>
+</ul>
+<img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/aad3ccde3181cb48205b61f469d5567a9e56e5f9.jpg" width="200" class="mce-img" /><br />―和田 亨（Toru WADA）インフラエンジニア CyberAgent, Inc<br />2011年にサイバーエージェントに入社後、インフラエンジニアとして広告関連プロダクトの開発に従事。最近ではKubernetesを使った開発を中心に行っている。<br />
+<p>---</p>
+<h2>ミドルウェア〜Webアプリまで全てをHelm化したサービスの運用事例</h2>
+<p>弊社で開発している広告計測ツールはGKEを使っていて、その上で動くコンテナは全てHelmで管理しています。Helmのメリット・デメリットや、どのようにCI/CDしているか、実際の運用事例をお話します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/9c28fa95cec08ef4cd2deefef149ad1ce70731ff.jpg" width="200" class="mce-img" /><br />―山田 直行（Naoyuki YAMADA）ソフトウェアエンジニア<br />2011年にサイバーエージェントに入社後、サーバーサイドのエンジニアとして、DSP・DMPなどの広告関連のプロダクト開発に幅広く従事。最近はGo言語に熱中している。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+
+            <div class="box heading wide sh_15 sm_0 min_40"
+            data-day="2018-12-04"
+            data-start-time="15:00"
+            data-end-time="15:40"
+            >
+              <div class="boxBody">
+                <div class="detail">
+                <div class="container">
+                <div class="inner">
+                <div class="head breaktime">
+                  <h3>おやつタイム（ブースエリア付近でおやつを配布します）<span>(15:00〜15:40)</span></h3>
+                </div><!-- /head -->
+              </div></div></div></div><!-- /boxBody -->
+            </div>
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_6fb84fba2d74a5bf00923796420d4a8f  sh_15 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65456]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65456" />              <input type="hidden" name="box_checkin_manager_3052739_65456_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65456" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1W3</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">改めて見直す、コンテナベースで作るメリット〜安心して開発を回す技術的ポイント〜 - 藤原涼馬, 伊藤瑛, 宮地克也（株式会社リクルートテクノロジーズ）</p>
+                  <div class="d"><p>新規サービスを構築するにあたって、Docker/Kubernetesを中心に据えたシステムの構築を行いました。コンテナベースのシステムを構築するためには、本番環境だけではなく、ローカル開発環境、CI、開発フローなど、様々な観点をそれぞれのエンジニアの立場で見直す必要があります。</p>
+<p>本セションでは、上記の観点について、インフラエンジニア、アプリケーションエンジニア、双方の観点からコンテナ化のメリットや注意点などを実例を踏まえながら紹介します。特に以下のポイントを中心にお伝えします。</p>
+<ul>
+<li>コンテナベースでシステムを構築することによるチームへの文化的影響</li>
+<li>コンテナベースでシステムを構築する際の技術的な配慮ポイント</li>
+<li>CI/CDとテスト</li>
+</ul>
+<img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/5df72af65aacee883d98101175fc49c3211e955f.jpg" width="200" class="mce-img" /><br />―藤原 涼馬（Ryoma Fujiwara）SREエンジニア 株式会社リクルートテクノロジーズ<br />2011年〜2015年 ユーザ系SIerにてR&amp;D業務に従事。2016年 リクルートテクノロジーズに入社。コンテナ・クラウドを中心とした先進技術の事業装着に従事。新規サービス開発のインフラチームリーダーとしてアーキテクティングに従事<br /><br />―伊藤 瑛（Akito Ito）SREエンジニア 株式会社リクルートテクノロジーズ<br />2015年 リクルートテクノロジーズに入社。メッセージ配信基盤などの開発・運用に従事しつつ、新規サービス開発のTechLeadとして従事<br /><br />―宮地 克也（Katsuya Miyachi）SREエンジニア 株式会社リクルートテクノロジーズ<br /> 2017年 リクルートテクノロジーズに入社。業務支援系ソリューションの開発に従事。新規サービス開発のインフラチームメンバーとして従事</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c   sh_16 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65460]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65460" />              <input type="hidden" name="box_checkin_manager_3052739_65460_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65460" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1W4</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">TBD - 原 康紘（Amazon Web Services Japan）</p>
+                  <div class="d"><p>AWS Fargate, Amazon ECS/EKS に代表される AWS コンテナ関連サービスの最新アップデート情報、JKD 直前に開催が予定されている AWS 最大の年次技術カンファレンス re:Invent のセッションから選りすぐりの最新情報をお伝えします。<br /><br />―原 康紘<span>（</span>Yasuhiro Hara<span>）</span>Specialist Solutions Architect<span> </span>Amazon Web Services Japan</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal heading    sh_17 sm_40 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3></h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">（TBD）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>HALL EAST（2F）</span></h4>
+            <div
+            class="box normal heading    sh_9 sm_40 min_150"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="09:40"
+            data-end-time="12:10"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>K1</span>基調講演／スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    09:40<span>-12:10</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">keynote（HALL WESTと結合）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_13 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65320]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65320" />              <input type="hidden" name="box_checkin_manager_3052739_65320_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65320" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1E1</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetes がもたらす分散システムの脅威との戦い - 坂部 広大（Wantedly）</p>
+                  <div class="d"><p>今年からすべてのプロダクトを Kubernetes に移行させて運用しています。組織全体として Kubernetes を活用するメリットは非常に大きいです。しかし、 Kubernetes がもたらす組織的変化や分散システムの複雑さが線形して伸びていきマイクロサービス化の歯止めがききません。</p>
+<p>現在 Wantedly も、 2013 年 InfoQ で発表された Twitter のマイクロサービスの技術的課題に差し掛かってきています。しかし、今では CNCF やクラウド等のようなエコシステムが整ってきているため、解決したい課題にフォーカスすることができるようになってきました。</p>
+<p>Kubernetes に全部プロダクトを乗せた背景と効果、その後起こった驚異に対して、 OpenCensus を使った分散トレーシングや Spinnaker ではなく自分たちがほしい最小の Deploy 方法、サービスメッシュに取り組んでいる理由、Kubernetes で起こった障害の対処などをご紹介させていただければと思います。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/897a580f74e72e788dbb26a4557619c764f577ed.png" width="200" class="mce-img" /><br />―坂部 広大<span>（</span>Kodai Sakabe<span>）</span>エンジニア<span> </span>Wantedly, Inc.<br />Wantedly, Inc. を支えるインフラエンジニア。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_14 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65324]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65324" />              <input type="hidden" name="box_checkin_manager_3052739_65324_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65324" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1E2</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Google Cloudで実現するオープンプラットフォーム（Knative,Istio,KubernetesとGKE）- 船寄 悟史（グーグル・クラウド・ジャパン）</p>
+                  <div class="d"><p>Google Cloudにおけるオープンプラットフォームへのアプローチとして、KubernetesからKnative、そしてIstioまで、OSSを用いた取り組みの目的やこれからについて、本セッションではご紹介いたします。<br /><br />―船寄 悟史（Satoshi Funayose）カスタマーエンジニア グーグル・クラウド・ジャパン合同会社<br />広告系WEB制作会社やゲーム会社でインフラの管理・運用を経験した後、2018年にグーグル・クラウド・ジャパンへ入社。現職では顧客への技術支援を主に担当。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 tag_73cac1f589e0651758f45daa91370f13  sh_15 sm_40 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65457]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65457" />              <input type="hidden" name="box_checkin_manager_3052739_65457_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65457" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1E3</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">1人でできるDocker/Kubernetes(GKE)を使った新規サービス立ち上げ - 春山 誠（株式会社ディー・エヌ・エー）</p>
+                  <div class="d"><p>Docker/Kubernetesはサービス開発・運用において強力なツールとなっています。Docker/Kubernetesの強みを活かせば1人であっても、サーバー側とインフラ側の開発・運用が可能です。本セッションでは、Docker/Kubernetesを活かしてどのようにサーバー側とインフラ側の開発・運用を行ったかを紹介します。</p>
+<p>主に下記について言及します。</p>
+<ul>
+<li>オンプレでの開発・運用スタイルからコンテナベースでの開発・運用スタイルへの転換</li>
+<li>Docker/Kubernetesを用いた本番環境と同じ検証環境の取り組み</li>
+<li>Kubernetesクラスタの運用に用いたサービス・ツール</li>
+<li>Kubernetes上で運用しなかった部分の紹介</li>
+<li>Docker/Kubernetesでは解決しえない問題とその対応</li>
+</ul>
+<img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/bd5ab40cd3793aa31d50837b7051a5363237f483.jpg" width="200" class="mce-img" /><br />―春山 誠<span>（</span>Makoto Haruyama<span>）</span>エンジニア<span> </span>株式会社ディー・エヌ・エー<br />株式会社ディー・エヌ・エーでモバイルゲームプラットフォームの開発・運用に携わったのち、現在は新規サービス立ち上げを行う部署でエンジニアをしています。</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal    sh_16 sm_40 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65461]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65461" />              <input type="hidden" name="box_checkin_manager_3052739_65461_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65461" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1E4</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">TBD（Red Hat）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal heading    sh_17 sm_40 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3></h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">（TBD）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>Terrace Room（2F）</span></h4>
+            <div
+            class="box normal heading    sh_12 sm_20 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="12:20"
+            data-end-time="13:00"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3></h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    12:20<span>-13:00</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">ランチタイム（ブースエリア付近で軽食を配布します、ランチセッションを受講されない方にも全員分のランチをご用意しています！）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal heading    sh_13 sm_20 min_100"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="13:20"
+            data-end-time="15:00"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3>特別企画</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">スピーカーラウンジ（登壇者へ質問できるAsk The Speakerコーナーやセッション形式ではなくテーマに沿ったディスカッションをするTechMeetingなどを企画しています、いずれも事前申込不要）</p>
+                  <div class="d">スピーカーラウンジ（登壇者へ質問できるAsk The Speakerコーナーやセッション形式ではなくテーマに沿ったディスカッションをするTechMeetingなどを企画しています、いずれも事前申込不要）</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal heading    sh_15 sm_40 min_160"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="15:40"
+            data-end-time="18:20"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3>特別企画</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">スピーカーラウンジ（登壇者へ質問できるAsk The Speakerコーナーやセッション形式ではなくテーマに沿ったディスカッションをするTechMeetingなどを企画しています、いずれも事前申込不要）</p>
+                  <div class="d">スピーカーラウンジ（登壇者へ質問できるAsk The Speakerコーナーやセッション形式ではなくテーマに沿ったディスカッションをするTechMeetingなどを企画しています、いずれも事前申込不要）</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal    sh_18 sm_40 min_100"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="18:40"
+            data-end-time="20:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65468]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65468" />              <input type="hidden" name="box_checkin_manager_3052739_65468_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65468" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>AF1</span>特別企画</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    18:40<span>-20:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">After Party &amp; Booth Crawl !!（ブースエリア付近で実施します）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>Room B（1F）</span></h4>
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 tag_cc2789a3b2238657f4e7148e6462c802  sh_12 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="12:20"
+            data-end-time="13:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65317]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65317" />              <input type="hidden" name="box_checkin_manager_3052739_65317_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65317" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1BL</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    12:20<span>-13:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_cc2789a3b2238657f4e7148e6462c802"><em>networking</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">コンテナネットワーキング（CNI）最前線　〜比べて分かるFlannel, Calico, Canal, NSX-T 〜 - 進藤 資訓（ヴイエムウェア）※ランチセッション</p>
+                  <div class="d">コンテナのためのネットワーク機能を実現するための仕様であるContainer Networking Interface (CNI) は、Kubernetesが採用したこともあり急激にエコシステムが拡大しています。現在、多数のオープンソースソフトウェアや商用のCNIプライグインが出てきていますが、それらの動作の仕組みはまちまちです。本セッションでは代表的なCNIプラグインであるFlannel, Canal Project, Canal, NSX-T Container Pluginなどを取り上げ、それぞれの動作概要や特性、使いどころなどについて解説をします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/fc4c761204403d0a9d324bfa66b158862f16ee26.jpg" width="200" class="mce-img" /><br />―進藤 資訓<span>（</span>Motonori Shindo<span>）</span>CTO, North Asia<span> </span>ヴイエムウェア株式会社<br />1988年東京電力に入社。1992年よりカーネギーメロン大学コンピュータ科学学科へ留学。その後、アセンド、コサイン、プロキシム等のネットワークベンダーを経て、2004年にファイブ・フロントを設立しCTOに就任。2011年よりニシラ（現ヴイエムウェア）に入社しネットワーク仮想化に従事。2016年ヴィプテラ（現シスコシステムズ）に入社し、SD-WAN市場の開拓にあたる。2018年に再びヴイエムウェアに戻り、APJのCTO Officeで北アジアを担当。講演・執筆多数。</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_cc2789a3b2238657f4e7148e6462c802  sh_13 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65321]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65321" />              <input type="hidden" name="box_checkin_manager_3052739_65321_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65321" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1B1</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_cc2789a3b2238657f4e7148e6462c802"><em>networking</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetesネットワーキングのすべて - 市原 裕史（NTT）</p>
+                  <div class="d"><p>Kubernetesでは様々なネットワーキング技術、L2レベルのネットワークからはじまり、ルーティング、ロードバランサ、ファイアウォールなどの技術を用いてコンテナの通信を実現しています。このセッションを通じて、Kubernetesの運用者、利用者はコンテナネットワーク、Kubernetesネットワーキングのすべてを理解し、コンテナで提供するサービスの通信をどのように実現すべきかを知ることができます。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/5285660c6e6939f61f3c96c97a72cd716ab5795e.jpg" width="200" class="mce-img" /><br />―市原 裕史<span>（</span>Hirofumi Ichihara<span>）</span>Software Engineer<span> </span>日本電信電話株式会社<br />SDN・クラウドコンピューティングの研究開発を行うエンジニア。主にOpenStackのエンジニアとしての業務がメインで、OpenStack NeutronプロジェクトのCore Reviewerとしても活動。最近は、Dockerのネットワークプラグイン、Kubernetesのネットワークプラグインなどの開発も実施しています。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b  sh_14 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65325]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65325" />              <input type="hidden" name="box_checkin_manager_3052739_65325_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65325" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1B2</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">40 topic of Kubernetes in 40 minutes - 寺田 佳央（マイクロソフト）</p>
+                  <div class="d"><p>Kubernetes (k8s) は今やコンテナのオーケストレーション・ツールとしてデファクト・スタンダードになりました。本セッションでは、k8s におけるアプリ開発、操作経験の中から、重要なコマンドやツール、また注意点などを 40 分で 40 項目一気にご紹介します。えっ？そんなの知っているよ！！という内容から、こんな機能もあったの？と目からうろこ的な内容までを数多くご紹介します！！<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/5e81ca451850b6e7cfeeea7386ad31a01f12dafc.png" width="200" class="mce-img" /><br />―寺田 佳央（Yoshio Terada）シニア・クラウド・デベロッパー・アドボケイト マイクロソフト・コーポレーション<br />2001 年 サン・マイクロシステムズ株式会社に入社し GlassFish エバンジェリストとして活動。2010年 オラクルのサン買収後、日本オラクル株式会社で Java エバンジェリストとして活動。Java の最新技術情報の提供や、Java コミュニティ活動の活性化を、日本 Java ユーザ・グループ(JJUG)と共に行ってきた。2015年7月、日本マイクロソフト株式会社に移籍し、Java エバンジェリストとして、マイクロソフト・プラットフォームにおける Java の利用促進・啓蒙活動を実施。 2018 年7月から Microsoft Corporation で日本人初のクラウド・デベロッパー・アドボケイトになる。Java Champion で、JJUG 幹事の一員でもある。<br />2013年 日経コンピュータ：我らプロフェッショナル 世界を元気にする 100 人に選ばれた。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_15 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65458]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65458" />              <input type="hidden" name="box_checkin_manager_3052739_65458_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65458" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1B3</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Ansible、Terraform、Packerで作るSelf-Hosted Kubernetes - 高石 諒（GMOペパボ株式会社）</p>
+                  <div class="d"><p>ここ数年、Kubernetesの管理をKubernetes自身に行わせる、Self-Hosted KubernetesやKubernetes as a Serviceという考え方が広まりつつあります。講演者は、Kubernetes自体の理解を深めるという目的も兼ね、AnsibleとTerraform、Packerを用いてOpenStack上にSelf-Hosted Kubernetesを構築するツールセットの開発・検証を行っています。本セッションでは、Self-Hosted Kubernetesの仕組み、構築・運用方法やこの活動を通して得られたことについてご紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/1d9534ee27cb53716e45d68a53f749183d67c009.jpg" width="200" class="mce-img" /><br />―高石 諒<span>（</span>TAKAISHI Ryo<span>）</span>Software Engineer<span> </span>GMOペパボ株式会社<br />GMOペパボ株式会社でプリンシパルエンジニアとして大規模サービスにおけるSite Reliability Engineeringに取り組む。開発・運用における省力化、自動化を実現するのが得意で、Infrastructure as Codeの分野にも結構強い。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_16 sm_40 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65462]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65462" />              <input type="hidden" name="box_checkin_manager_3052739_65462_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65462" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1B4</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetesエンジニアになるには？ 〜 Kubernetesトレーニングと、CKA/CKAD資格取得に向けて 〜 - 荒井 康宏（クリエーションライン）</p>
+                  <div class="d"><p>TBA<br /><br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/45ba1d328239eb3f2b4b3eee1e05b152bde06259.jpg" width="200" class="mce-img" /><br />―荒井 康宏<span>（</span>Yasuhiro Arai<span>）</span>取締役 兼 CTO<span> </span>クリエーションライン株式会社</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_0a3efaa34ae2a4764cc6efd974cd1092  sh_17 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65754]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65754" />              <input type="hidden" name="box_checkin_manager_3052739_65754_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65754" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1B5</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_0a3efaa34ae2a4764cc6efd974cd1092"><em>distributed database</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetesが超強力な分散RDBに vitessの真価を大検証してみた - 早川 博（日本オラクル）</p>
+                  <div class="d"><p>VitessはCNCFがホストするインキュベーションプロジェクトで、Kubernetesの力を使って、MySQLを動的に水平スケール可能な分散DBに変身させることができます。</p>
+<p>このセッションでは、Vitessが本当に本番利用に耐える能力を持っているのか、パフォーマンスと運用性などの観点から徹底検証して結果をご報告いたします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/4e9c6d169611ae7335ba21b457f077454fa9764a.jpg" width="200" class="mce-img" /><br />―早川 博<span>（</span>Hiroshi Hayakawa<span>）</span>セールスコンサルタント<span> </span>日本オラクル株式会社<br />パッケージソフトウェアの開発者を経て、現在では日本オラクルでソリューション・アーキテクトとして、クラウドシステム設計の技術支援・提案に従事しています。専門領域はJava SE/EE、及びMicroservices、DevOpsなどのアプリケーション設計／開発手法です。傍ら、Kubernetesを中心としたCloud Nativeなテクノロジーの普及促進のため、コミュニティ活動にも取り組んでいます。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>Room C（1F）</span></h4>
+            <div
+            class="box normal    sh_9 sm_40 min_150"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="09:40"
+            data-end-time="12:10"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65467]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65467" />              <input type="hidden" name="box_checkin_manager_3052739_65467_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65467" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>K1</span>基調講演／スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    09:40<span>-12:10</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">keynote（2FHALLの定員を超えた場合は1Fのサテライト会場へご案内します）</p>
+                  <div class="d">keynote（HALLの定員を超えた場合は1Fのサテライト会場へのご案内となります）</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c   sh_12 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="12:20"
+            data-end-time="13:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65319]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65319" />              <input type="hidden" name="box_checkin_manager_3052739_65319_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65319" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1CL</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    12:20<span>-13:00</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">IBM Kubernetesの全貌と始め方（日本アイ・ビー・エム）※ランチセッション</p>
+                  <div class="d">TBD</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_13 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65322]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65322" />              <input type="hidden" name="box_checkin_manager_3052739_65322_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65322" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1C1</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">本番環境のKubernetesマニフェストに最低限必要な7のこと - 青山 真也（CyberAgent）</p>
+                  <div class="d"><p>Kubernetesのマニフェストに記述可能な項目は多岐にわたります。本セッションでは、プロダクションで利用するにあたり、最低限設定する必要のある頻出パターンとして、下記の7項目について説明します。</p>
+<ul>
+<li>カーネルパラメータのチューニング</li>
+<li>コンテナのライフサイクル</li>
+<li>メンテナンスとアップデート</li>
+<li>リソースの割当と基準</li>
+<li>グローバルからのアクセス制御</li>
+<li>ヘルスチェック</li>
+<li>スケジューリング</li>
+</ul>
+<img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/cbcdf4282b59d18825036bf2fad8700da1dc53cd.jpg" width="200" class="mce-img" /><br />―青山真也（Masaya Aoyama）Infrastructure Engineer CyberAgent, Inc<br /><span>2016年入社。OpenStackを使ったプライベートクラウドやGKE互換なコンテナプラットフォームをゼロから構築し、国内カンファレンスでのKeynoteに登壇。 その後、世界で2番目にCertified Kubernetes Application Developer、138番目にCertified Kubernetes Administratorの認定資格を取得。 現在はKubernetesやOpenStackなどOSSへのコントリビュート活動をはじめ、CNCF公式のCloud Native Meetup TokyoのOrganizerなどコミュニティ活動にも従事している。</span></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_24cd171062c9ddcbe160a9b181cb3cb7 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 tag_cbd29d3e7f8635e3d8832590a2e17fbc  sh_14 sm_20 min_40"
+            data-main-category="cat_24cd171062c9ddcbe160a9b181cb3cb7"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65326]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65326" />              <input type="hidden" name="box_checkin_manager_3052739_65326_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65326" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1C2</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_24cd171062c9ddcbe160a9b181cb3cb7"><p><span>Advanced - 上級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_cbd29d3e7f8635e3d8832590a2e17fbc"><em>microservices</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">マイクロサービスとkubernetesの性能分析 (仮) - 岩本 俊弘（VA Linux Systems Japan）</p>
+                  <div class="d"><p>TBD<br /><br />―岩本 俊弘<span>（</span>Toshihiro Iwamoto<span>）</span>技術本部 クラウド基盤エキスパート　工学博士<span> </span>VA Linux Systems Japan株式会社</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_15 sm_40 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65459]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65459" />              <input type="hidden" name="box_checkin_manager_3052739_65459_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65459" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1C3</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">k8s初心者だった私がk8sに移行・運用するまでのすべて - 西脇 靖紘（ウエディングパーク）／高レイテンシwebサーバのk8s(GKE)構築と踏んだ地雷 - 野村 順平（ノハナ）※ショートセッション2本立て</p>
+                  <div class="d"><p>k8s初心者向けに、どうやってk8sをマスターしていくのかを、私の経験から語ります。 参加者のk8sチャレンジの敷居を下げるのに少しでもお役に経てばと思っています。</p>
+<ul>
+<li>・初心者は何から始めるべき？</li>
+<li>・つまづきポイント</li>
+<li>・私がやってきたこと</li>
+<li>・マスター方法</li>
+<li>・初心者でも見るべき設計ポイント</li>
+<li>・CKAの取得周り（予定。）</li>
+<li>・初めてのk8sサイトの運用経験（予定。）</li>
+</ul>
+<p><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/e650a94b2899e569313543e36b30bf87023edda4.jpg" width="200" class="mce-img" /><br />―西脇 靖紘<span>（</span>Yasuhiro Nishiwaki<span>）</span>エンジニア<span> </span>株式会社ウエディングパーク<br />外資系大手通信会社を経て、現在はサイバーエージェントグループ、株式会社ウエディングパーク社所属。インフラエンジニア・パフォーマンスエンジニアとして従事。　オライリーにて「詳解 システム・パフォーマンス」、「パフォーマンス向上のためのデザイン設計」の監訳、執筆を担当。<br />---</p>
+<p>弊社のフォトブック作成アプリ「ノハナ」のバックエンドは既存サービスのGCP化を随時進めております。その一環としてGKEを運用し始めて約半年になります。今回はその移行および運用の際の知見を紹介しようと思います。</p>
+<p>一般的な知見については他講演でも話されるとは思いますので、弊社ならではの課題解決や踏んだ地雷を主旨に発表させていただきます。</p>
+<p>概要:</p>
+<ul>
+<ul>
+<ul>
+<li>・アーキテクチャの紹介</li>
+<li>・高負荷になりがちな画像処理やファイルi/oへの対応
+<ul>
+<li>・アプリケーションからのアプローチ</li>
+<li>・インフラからのアプローチ</li>
+</ul>
+</li>
+<li>・小規模GKE環境でのエコシステム</li>
+<li>・レガシーなperlプロジェクトのDockerize</li>
+<li>・踏んだ地雷?の紹介
+<ul>
+<li>・preemptible node pool を本番で稼働させた話</li>
+<li>・cronjobを`1/* * * *`でスケジュールした話</li>
+</ul>
+</li>
+(時間あれば他にも...)</ul>
+</ul>
+</ul>
+<img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/2fd41ece1ff5fddd5087d5c779d091fdb9b4b13b.jpg" width="200" class="mce-img" /><br />―野村 順平（Junpei Nomura）Server engineer 株式会社ノハナ<br />株式会社ノハナでサーバエンジニアをしている野村と申します。主にGKE, Go言語を使って日々の業務をしています。休日は近くの川で一人でハゼ釣りをしていますので見かけたら声をかけてください。写真は上野の科学博物館に展示されているフローレス原人です。よろしくお願いします。</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal    sh_16 sm_40 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65463]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65463" />              <input type="hidden" name="box_checkin_manager_3052739_65463_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65463" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1C4</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">TBD（Rancher）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_5dd17e731d3131677307fe22d9e11711  sh_17 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-04"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65755]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65755" />              <input type="hidden" name="box_checkin_manager_3052739_65755_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65755" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>1C5</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_5dd17e731d3131677307fe22d9e11711"><em>serverless</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">2019年はコンテナよりもクラウドネイティブ!? Knativeのすべて - 草間 一人（Pivotalジャパン）</p>
+                  <div class="d"><p>Kubernetesの登場から数年。徐々に本番で利用する事例も増えてきました。コンテナを本番利用するにあたっては、あらかた道筋がついてきたのではないかと思います。しかし、最近はサービスメッシュだとかクラウドネイティブだとか、新しい単語が飛び交うようになってきました。 コンテナだけでも結構複雑なのに、さらにこんなものまで覚えていく必要があるのか･･･。<br />そんな悩めるみなさんにご紹介したいのが、このKnativeです。Knativeは、複雑化するクラウドネイティブのテクノロジーをシンプルにまとめ上げるだけでなく、新たなトレンドであるサーバーレスコンピューティングまでも視野に入れた、新しいプラットフォームです。今回はKnativeの基本から活用方法まで、デモを交えながらご紹介します<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/90fafde00ed4990a482e85724c1ce46419329ad4.png" width="200" class="mce-img" /><br />―草間 一人<span>（</span>Kazuto Kusama<span>）</span>Solutions Architect<span> </span>Pivotalジャパン<br />Pivotalジャパンにて、Pivotal Cloud FoundryのSolutions Architectを務める。通信事業者勤務時代からCloud Foundryベースのサービス開発に携わっているほか、個人活動としてPaaS勉強会の主催、日本Cloud Foundryグループの理事にも就任している。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+        </div><!-- /timetable -->
+      </div><!-- /timeTableBody -->
+    </div><!-- /timeTableBlock -->
+
+    <div class="_anqPos">
+      <a name="_day2" id="_day2" class="anq"></a>
+    </div>
+
+    <h2 class="sessionHeading _heading" id="h_day2">
+      <div class="headingIn _windowWidth">
+      <strong>2018/12/05</strong>
+      <span>(水)</span>
+      </div>
+    </h2>
+    <div limitPos="0" class="timeTableBlock clearfix" sH="11" sM="0" eH="18" eM="20">
+      <div class="timeTableBody">
+        <div width="0" border="0" cellspacing="0" cellpadding="0" class="timetable" data-day="2">
+
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>HALL WEST（2F）</span></h4>
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_11 sm_0 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="11:00"
+            data-end-time="11:40"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65469]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65469" />              <input type="hidden" name="box_checkin_manager_3052739_65469_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65469" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2WA</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    11:00<span>-11:40</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">2020年のコンテナはどうなる!?  コンテナプラットフォームのこれまでとこれから - 草間 一人ほか数名（PaaS JP）</p>
+                  <div class="d"><p>2017年の夏。とあるイベントにおいて、各コンテナプラットフォームの有識者を集めてパネルディスカッションを行いました。コンテナを実践運用するには何をしなければいけないか、どういうプラットフォームを採用していくべきか。</p>
+<p>しかしそこから僅か1年で、コンテナを取り巻く状況は大きく変わってきたように思います。主眼はコンテナからクラウドネイティブに移り、プラットフォームに求められるものもサービスメッシュやトレーサビリティなど、多岐に渡るようになってきました。</p>
+<p>それに伴い、運用側にも開発側にも求められるものがどんどん増えていますね。悩みは尽きません。</p>
+<p>今回は、そんな悩める運用者・開発者のために、再びプラットフォームの有識者で集まりパネルディスカッションを開催したいと思います。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/90fafde00ed4990a482e85724c1ce46419329ad4.png" width="200" class="mce-img" /><br />―草間 一人（Kazuto Kusama<span>）</span>Solutions Architect<span> </span>Pivotalジャパン<br />Pivotalジャパンにて、Pivotal Cloud FoundryのSolutions Architectを務める。通信事業者勤務時代からCloud Foundryベースのサービス開発に携わっているほか、個人活動としてPaaS勉強会の主催、日本Cloud Foundryグループの理事にも就任している。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b tag_19e9b2ca1766200718e20139b2e8ffca  sh_12 sm_0 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="12:00"
+            data-end-time="12:40"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65524]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65524" />              <input type="hidden" name="box_checkin_manager_3052739_65524_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65524" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2WL</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    12:00<span>-12:40</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                            <span class="boxTag tag_19e9b2ca1766200718e20139b2e8ffca"><em>ML</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetes上で動作する機械学習モジュールの配信＆管理基盤Druckerについて - 服部 圭悟（LINE）※ランチセッション</p>
+                  <div class="d"><p>近年の機械学習の流行によって多くの機械学習モジュールが実サービスで運用されています。LINE Clovaでも多くの機械学習モジュールが可動しています。機械学習における「学習」まわりのツールが充実してきた一方で、構築した機械学習モジュールの「運用」まわりのツールは多くありません。本セッションでは、Kubernetes上で動作する機械学習モジュールの配信＆管理基盤Druckerをご紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/91dca179a003cf1e20d7433a36a32342ad28ef71.jpg" width="200" class="mce-img" /><br />―服部 圭悟<span>（</span>Keigo Hattori<span>）</span>ソフトウェアエンジニア<span> </span>LINE<br />LINE Clovaソフトウェアエンジニア。専門は機械学習と自然言語処理。Apitoreの創業者。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+
+            <div class="box heading wide sh_12 sm_40 min_40"
+            data-day="2018-12-05"
+            data-start-time="12:40"
+            data-end-time="13:20"
+            >
+              <div class="boxBody">
+                <div class="detail">
+                <div class="container">
+                <div class="inner">
+                <div class="head breaktime">
+                  <h3>ランチ休憩（引き続きブース展示やお食事をお楽しみください）<span>(12:40〜13:20)</span></h3>
+                </div><!-- /head -->
+              </div></div></div></div><!-- /boxBody -->
+            </div>
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d tag_1e8455480ff3fa604cf3a242b4b69320  sh_13 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65527]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65527" />              <input type="hidden" name="box_checkin_manager_3052739_65527_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65527" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2W1</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_1e8455480ff3fa604cf3a242b4b69320"><em>container runtime</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Dockerセキュリティ: 今すぐ役に立つテクニックから，次世代技術まで - 須田 瑛大（Docker Tokyo）</p>
+                  <div class="d"><p>Dockerコンテナをより安全に実行する方法について、`docker run --user`、`dockerd --userns-remap`などの今すぐ役に立つテクニックから、Kata Containers、gVisor、Nabla Containers、Rootless Containersなどの次世代技術まで幅広くご紹介します。</p>
+<p>Dockerを使い始めたばかりの方にも、既に使いこなしている方にも役立つセッションです。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/85b974147960a0c0891f72414ffbc0fcd9eb38e5.jpg" width="200" class="mce-img" /><br />―須田 瑛大（Akihiro Suda）研究員 日本電信電話株式会社<br />日本電信電話株式会社(NTT) ソフトウェアイノベーションセンタ勤務．<br />2014年の入社以来一貫してOSSコミュニティ活動に従事．2016年よりDocker(現Moby)のメンテナ(コミッタ)を務めている．また，Moby BuildKit(次世代`docker build`)及びCNCF containerd (Docker・Kubernetesのランタイム)などのメンテナや，Docker Tokyo meetupのオーガナイザも務めている．</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_14 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65534]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65534" />              <input type="hidden" name="box_checkin_manager_3052739_65534_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65534" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2W2</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetesと暮らすRancherな生活 - 千葉 豪（Rancher JP）</p>
+                  <div class="d"><p>この数年でコンテナ管理ツールのデファクトとなった Kubernetes。しかし、我々は Kubernetes を構築したかったわけでは無く &rdquo;乗りこなしたかった&rdquo; のだ&hellip; そんなあなたに送る Rancher や関連するツールを使った Kubernetes との付き合い方を紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/1b199e2b76f11bf27371851188aeba41a190d851.jpg" width="200" class="mce-img" /><br />―千葉 豪<span>（</span>Go Chiba<span>）</span>エンジニア<span> </span>Rancher JP<br />2013年頃より CloudStack/OpenStack といったクラウドオーケストレーションツールの技術主管を担当する傍ら OSS 活動に参加。現在は Rancher JP 運営メンバーとして Rancher および関連するコンテナ技術に関しての勉強会を開催。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+
+            <div class="box heading wide sh_15 sm_0 min_40"
+            data-day="2018-12-05"
+            data-start-time="15:00"
+            data-end-time="15:40"
+            >
+              <div class="boxBody">
+                <div class="detail">
+                <div class="container">
+                <div class="inner">
+                <div class="head breaktime">
+                  <h3>おやつタイム（ブースエリア付近でおやつを配布します）<span>(15:00〜15:40)</span></h3>
+                </div><!-- /head -->
+              </div></div></div></div><!-- /boxBody -->
+            </div>
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_9c873575296a4a93c004d1377638255f  sh_15 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65535]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65535" />              <input type="hidden" name="box_checkin_manager_3052739_65535_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65535" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2W3</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_9c873575296a4a93c004d1377638255f"><em>other</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">MeetUpを活性化せよ! 最強のリアルタイムQA投稿アプリをCloud Nativeに作ってみた - 早川 博（Cloud Native Developers JP）</p>
+                  <div class="d"><p>延べ年間18000回を超えるコミュニティMeetUp。そんなコミュニティ活動に共通の悩み、それは参加者からの質問がでないこと。たくさんのエンジニアが大集合するせっかくの時間、インタラクティブに進めないと勿体ないということで、最強のリアルタイムQA投稿アプリを自分たちで作ることにしました。</p>
+<p>ボランティアかつリモートのコミュニケーションが基本のコミュニティ活動で、Cloud NativeなアーキテクチャのQA投稿アプリを本当に開発／運用できるのか？ Cloud Native Developers JPメンバーが実際に取り組んで、得られた知見をこのセッションで披露いたします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/4e9c6d169611ae7335ba21b457f077454fa9764a.jpg" width="200" class="mce-img" /><br />―早川 博（Hiroshi Hayakawa）ソリューション・エンジニア 日本オラクル株式会社<br />パッケージソフトウェアの開発者を経て、現在では日本オラクルでソリューション・アーキテクトとして、クラウドシステム設計の技術支援・提案に従事しています。専門領域はJava SE/EE、及びMicroservices、DevOpsなどのアプリケーション設計／開発手法です。傍ら、Kubernetesを中心としたCloud Nativeなテクノロジーの普及促進のため、コミュニティ活動にも取り組んでいます。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_16 sm_40 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65536]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65536" />              <input type="hidden" name="box_checkin_manager_3052739_65536_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65536" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2W4</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">コンテナプラットフォームとしてのApache Mesos 〜ユーザ事例を通して学ぶなぜなにMesos〜 光野 達朗（Mesos User Group Tokyo）</p>
+                  <div class="d"><p>Apache Mesosを使うことで、我々は分散環境をあたかも一つの巨大な計算機のように扱うことが可能になります。本セッションでは、コンテナベースのアプリケーションを開発・運用する方々に向けて、そんなApache Mesosの魅力をお伝えいたします。</p>
+<p>Apache Mesosとは一体何なのか・コンテナプラットフォームとして何が嬉しいのかについて最新の動向を交えご紹介した後、具体的なユーザ事例として、実際に本番稼働中のシステムを取り上げます。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/574a122e846d3672b4adce8f58c22597d5a083b0.png" width="200" class="mce-img" /><br />―光野 達朗<span>（</span>Tatsuro Mitsuno<span>）</span>インフラエンジニア<span> </span>株式会社スタートトゥデイテクノロジーズ/Mesos User Group Tokyo<br />ヤフー株式会社にてヤフオク!・広告の開発に携わる。2016年からは株式会社VASILY、法人統合に伴い2018年4月から現職。現在はインフラエンジニアとして、日々サービスの信頼性向上に努める。VASILY時代の取り組みから縁あってMesos User Group Tokyoに参加。本番環境での実践ネタ担当。ウィスキーと葉巻が好き。愛してる。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal    sh_17 sm_40 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65537]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65537" />              <input type="hidden" name="box_checkin_manager_3052739_65537_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65537" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2W5</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">TBD - TBD（Kubernetes Meetup Tokyo）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>HALL EAST（2F）</span></h4>
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_9c873575296a4a93c004d1377638255f  sh_11 sm_0 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="11:00"
+            data-end-time="11:40"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65470]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65470" />              <input type="hidden" name="box_checkin_manager_3052739_65470_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65470" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2EA</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    11:00<span>-11:40</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_9c873575296a4a93c004d1377638255f"><em>other</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Cloud Nativeプロダクト1000本ノック - 青山 真也、高石 諒、斎藤 和史（Cloud Native Meetup Tokyo）</p>
+                  <div class="d"><p>Cloud NativeなプロダクトはCNCF公式のものだけでも26個、更にKubernetes周辺のエコシステムを含めるとその数は膨大です。本セッションでは、様々なOSSについて多岐にわたって紹介し、Kubernetesを中心として取り巻くエコシステムを知ることで、今後のCloud Nativeな開発について考えます。また、どのようなOSSがあるのかを知りたい方にも有用です。（1000個は紹介しません）<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/cbcdf4282b59d18825036bf2fad8700da1dc53cd.jpg" width="200" class="mce-img" /><br />青山 真也（Masaya Aoyama）Infrastructure Engineer CyberAgent<br />2016年入社。OpenStackを使ったプライベートクラウドやGKE互換なコンテナプラットフォームをゼロから構築し、国内カンファレンスでのKeynoteに登壇。<br />その後、世界で2番目にCertified Kubernetes Application Developer、138番目にCertified Kubernetes Administratorの認定資格を取得。<br />現在はKubernetesやOpenStackなどOSSへのコントリビュート活動をはじめ、CNCF公式のCloud Native Meetup TokyoのOrganizerやJapan Container Daysの運営などコミュニティ活動にも従事している。<br /><br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/1d9534ee27cb53716e45d68a53f749183d67c009.jpg" width="200" class="mce-img" /><br />高石 諒（Ryo Takaishi）Software Engineer GMOペパボ<br />GMOペパボ株式会社でプリンシパルエンジニアとして大規模サービスにおけるSite Reliability Engineeringに取り組む。開発・運用における省力化、自動化を実現するのが得意で、Infrastructure as Codeの分野にも結構強い。<br /><br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/308d86a32653cbd0d6cdf09f43c40fec05ab987b.jpg" width="200" class="mce-img" /><br />斎藤 和史（Kazufumi Saito）Presales Engineer IBM<br />2013年 IBM 入社。アプリケーションサーバーやモバイル基盤、API管理基盤、PaaSなどのサーバーサイドのバックグラウンドを持つプリセールスエンジニア。現在はクラウド対応やクラウドネイティブをベースにお客様のデジタル変革を支援している。またCNCF公式のCloud Native Meetup Tokyoや、Cloud Native Developers JPなどのコミュニティ運営に従事し、Kubernetesユーザーの拡大を目的とした活動に注力している。"</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_6d456e69b5d95c08c3a34811cd1ed039 tag_73cac1f589e0651758f45daa91370f13  sh_12 sm_0 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="12:00"
+            data-end-time="12:40"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65525]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65525" />              <input type="hidden" name="box_checkin_manager_3052739_65525_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65525" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2EL</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    12:00<span>-12:40</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">コードを書くことに集中したい全てのアプリ開発者に贈るKubernetesの話 - 水倉 良明（サイオステクノロジー）※ランチセッション</p>
+                  <div class="d"><p>コンテナネイティブな時代、アプリケーションエンジニアに求められる技術領域はさらに広がりを見せつつあります。インフラとアプリの境界を変えたコンテナ技術にどこまで踏み込めばいいのか迷っているアプリケーションエンジニアは多いと思います。このセッションでは、アプリケーションエンジニアがコーディングに集中するために知っておきたいコンテナ技術のおさらいから、Kubernetesとその周辺ツールの基本をデモも交えて説明します。<br /><br />―水倉 良明<span>（</span>Yoshiaki Mizukura）サイオステクノロジー株式会社<br />アプリケーションエンジニアとしてC++、Java、C#でのアプリケーション開発を経験。Vagrantに衝撃を受けたことをきっかけにインフラにも興味を持つように。現職ではクラウドネイティブなアーキテクチャ設計から構築、運用に従事。近年はデータ分析基盤、API基盤を手掛けることが多く、インフラからアプリまで幅広く携わる。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 tag_6fb84fba2d74a5bf00923796420d4a8f  sh_13 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65529]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65529" />              <input type="hidden" name="box_checkin_manager_3052739_65529_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65529" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2E1</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">GitLabによるコンテナCI/CDパイプラインのこれから - 北山 晋吾（GitLab Tokyo）</p>
+                  <div class="d"><p>GitLabが提唱するComplete DevOpsをもとに、これからのコンテナのCI/CDパイプラインのあり方を紹介します。</p>
+<p>GitLabは近年進化を遂げ、バージョン管理システムの機能に留まらず、Kubernetesを活用したCI/CDや継続的デプロイメント機能を実装しています。これは、数多く存在するツールの選定/構築/運用コストを排除し、アプリケーション開発に集中できるプラットフォームを実現する最善策とも言えます。</p>
+<p>本セッションでは、Kubernetesと連携したGitOpsから、CI/CDパイプラインを自動化できるAuto DevOpsを始めとしてGitLabの魅力をお伝えいたします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/6369f5ffe7803e0762e919922a908935db0dbacb.jpg" width="200" class="mce-img" /><br />―北山 晋吾<span>（</span>Shingo Kitayama<span>）</span>ソリューションアーキテクト<span> </span>Red Hat 株式会社<br />Red Hat株式会社にて、OpenShiftのソリューションアーキテクトとしてDevOpsやクラウド分野のテクニカルコンサルティングを担当。著書/共著として、「Ansible/GitLab実践ガイド(インプレス)」「インフラCI実践ガイド(翔泳社)」など</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal    sh_14 sm_20 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65763]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65763" />              <input type="hidden" name="box_checkin_manager_3052739_65763_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65763" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2E2</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">TBD - TBD（Bluemix Users Group）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal    sh_15 sm_40 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65766]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65766" />              <input type="hidden" name="box_checkin_manager_3052739_65766_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65766" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2E3</span>特別企画</h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">TBD - TBD（showk）</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_618b1aa4770c736f985b2c0cd0781c2c tag_9c873575296a4a93c004d1377638255f  sh_16 sm_40 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65769]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65769" />              <input type="hidden" name="box_checkin_manager_3052739_65769_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65769" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2E4</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_9c873575296a4a93c004d1377638255f"><em>other</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">コンテナ時代のOpenStack - 吉山 晃（日本OpenStackユーザ会）</p>
+                  <div class="d"><p>大半のクラウドアプリケーションはその実行環境を IaaS からコンテナへと移行しました。このようなコンテナ時代において、OSS クラウド基盤開発プロジェクト「OpenStack」がどのようなコンテナ関連の取り組みを行っているのかをご紹介いたします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/86774f6ec2518ff5a31b1e57de5fbbadaa5650b0.jpg" width="200" class="mce-img" /><br />―吉山 晃<span>（</span>Akira Yoshiyama<span>）</span>OpenStack Ambassador<span> </span>日本OpenStackユーザ会<br />20年以上 Linux/OSS コミュニティで活動。2010年より OpenStack に携わり、OpenStackユーザ会の勉強会や OSC 等の OSS イベントで講演。2013年に OpenStack Ambassador (OpenStack Foundation 公認エバンジェリスト) に就任。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_9c873575296a4a93c004d1377638255f  sh_17 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65771]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65771" />              <input type="hidden" name="box_checkin_manager_3052739_65771_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65771" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2E5</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_9c873575296a4a93c004d1377638255f"><em>other</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">NoOpsが目指す未来像とコンテナ技術 - 岡 大勝、川崎 庸市（NoOps Japan）</p>
+                  <div class="d"><p>このセッションでは、NoOps実現に向けた未来像（アーキテクチャデザインゴール）について、コンテナと、コンテナを中心としたエコシステムの観点から、独断と偏見を交えてお話します<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/ecb67d1bf7f7e05f05c5358242b1250b4b62f31c.jpg" width="200" class="mce-img" /><br />―岡 大勝（Hiromasa Oka）代表取締役兼アーキテクト&nbsp;株式会社ゼンアーキテクツ<br />ハイスケール・ハイキャパシティのクラウドネイティブソリューションを専門とするITアーキテクチャ設計事務所、株式会社ゼンアーキテクツの代表兼アーキテクト。日本DEC、日本HP、日本ラショナルソフトウェアにて、アーキテクチャ設計および開発プロセス改善を専門に活動を続け、2003年に独立しゼンアーキテクツを設立。2013年に日経BP社の選出する「日本を代表する18人のITアーキテクト」の一人として選出される。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/d0c5d825b7dc1fa19e3070a413f1fc85c8662dce.jpg" width="200" class="mce-img" /><br />―川崎 庸市（Yoichi Kawasaki）Azure テクノロジーソリューションプロフェッショナル 日本マイクロソフト株式会社<br />インターネットサービス企業にてソフトウェア開発エンジニア、エンタープライズ検索製品フィールドエンジニア、Azure ソリューションアーキテクトを経て現職。2017年 ～ Global Back Belt（黒帯）というグローバル組織に所属しクラウド開発分野でお客様・パートナー様の プリセールス技術支援、イベント・セミナー登壇を通じてクラウド技術の普及に従事。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>reception（2F）</span></h4>
+            <div
+            class="box normal cat_24cd171062c9ddcbe160a9b181cb3cb7 cat_ae99644a27870d1e38811bb0637169b4 cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_13 sm_20 min_100"
+            data-main-category="cat_24cd171062c9ddcbe160a9b181cb3cb7"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="13:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65532]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65532" />              <input type="hidden" name="box_checkin_manager_3052739_65532_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65532" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2r2</span>コミュニティセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_24cd171062c9ddcbe160a9b181cb3cb7"><p><span>Advanced - 上級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Cloud Native Deep Dive@JKD - Cloud Native Deep Dive ※ワークショップ形式</p>
+                  <div class="d"><p>Cloud Native Deep Diveは、CNCFプロダクトを本番投入していくための、深いディスカッションを行っていこうという上級者向けミートアップです。このミートアップでは、『○○○&lt;プロダクト名&gt;とは？』といった入門向けセッションは行いません。 参加者全員(ここ重要) によるディスカッションを主とし、実戦で使われる知識と経験を深めていくことを目的としています。今回は、JKDという場所を借りて、Deep Diveセッションを開催したいと思います。深〜く語りたい皆様、是非ご参加ください。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/36b9aef0db3211c7f4f0b6acee9a6f5701caad86.jpg" width="356" class="mce-img" /><br />―@shindoy / @jacopen / @superbrothers/ @ladicle / @cyberblack28 <span> </span>@shindoy / @jacopen / @superbrothers/ @ladicle / @cyberblack28 - Cloud Native Deep Dive<br />Kubernetes Meetup / Rancher Meetup / PaaSJPなど、国内の有名ミートアップのオーガナイザーが集まって企画しているイベント、それがCloud Native Deep Diveです</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal heading    sh_15 sm_40 min_100"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="15:40"
+            data-end-time="17:20"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3></h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">スピーカーラウンジ（登壇者へ質問できるAsk The Speakerコーナーやセッション形式ではなくテーマに沿ったディスカッションをするTechMeetingなどを企画しています、いずれも事前申込不要）</p>
+                  <div class="d">スピーカーラウンジ（登壇者へ質問できるAsk The Speakerコーナーやセッション形式ではなくテーマに沿ったディスカッションをするTechMeetingなどを企画しています、いずれも事前申込不要）</div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>Terrace Room（2F）</span></h4>
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13 tag_19e9b2ca1766200718e20139b2e8ffca  sh_11 sm_0 min_100"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="11:00"
+            data-end-time="12:40"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65471]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65471" />              <input type="hidden" name="box_checkin_manager_3052739_65471_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65471" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2TL</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    11:00<span>-12:40</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                            <span class="boxTag tag_19e9b2ca1766200718e20139b2e8ffca"><em>ML</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetesではじめる深層学習♥推論環境構築ハンズオン - 阿佐 志保ほか数名（日本マイクロソフト）※ワークショップ形式※ランチセッション</p>
+                  <div class="d"><p>Kubernetesは、クラウドネイティブなマイクロサービスの基盤としてだけでなく、コンテナ化された深層学習の推論アプリケーションの実行基盤としても注目が集まっています。そこで本ワークショップでは、まずMicrosoftの画像認識APIであるCustom Visionをつかって独自のデータセットから画像分類のモデルを作成し、生成されるDockerfileから推論のためのコンテナイメージを作成します。次に出来上がったイメージをもとに、Kubernetesクラスタ上にデプロイするハンズオンを行います。深層学習やコンテナを使ったアプリケーション開発の流れを、実際に手を動かしながら学んでいただくことができます。※クラスタはAKSを使って作成予定です<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/d6ed13fe8fce509aad9bc84dabdfb14f88581a66.jpg" width="200" class="mce-img" /><br />―阿佐志保（Shiho Asa）テクニカルエバンジェリスト 日本マイクロソフト株式会社※ほか数名<br />金融系シンクタンクなどで銀行/証券向けインフラエンジニア、製造業向けインフラエンジニアとして従事。都市銀行情報系基盤システム構築やシステム統廃合、証券会社向けバックオフィスシステムの共通基盤開発や統合認証基盤構築プロジェクト、石油/LNGプラント建設を行うエンジニアリング企業のシステム基盤構築プロジェクトなどを経験。<br />出産で離職後、Linuxやクラウドなどを独学で勉強し、初学者向けの技術書を執筆。現在はマイクロソフトでパートナー向け営業活動や技術支援などに従事。主な著書「Windows8 開発ポケットリファレンス」「プログラマのためのDocker教科書」など。 まったりするのが特技です。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_618b1aa4770c736f985b2c0cd0781c2c tag_6fb84fba2d74a5bf00923796420d4a8f  sh_13 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65530]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65530" />              <input type="hidden" name="box_checkin_manager_3052739_65530_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65530" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2T1</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Jenkins x Kubernetesが簡単だと思ったら大変だった話 - 山本 誠樹（SRIA）</p>
+                  <div class="d"><p>昨今、コンテナやkubernetesに対応したCI/CDツールはたくさんありますが、古くからあるJenkinsも当然対応しています。今回はプロダクション環境で実際に使用した経験から、Dockerビルドの苦労話や、Declarative Pipelineでコード化することでいわゆる「Jenkinsおじさん問題」を解決したことをお話しします。</p>
+<p>また、Jenkinsを実際運用するに当たって、パブリッククラウドの比較や連携方法も合わせてお話しします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/bb20fec14b78f397b658e27ad73df9ad3797af57.png" width="200" class="mce-img" /><br />―山本 誠樹<span>（</span>Masaki Yamamoto<span>）</span>技術フェロー<span> </span>株式会社SRIA<br />仙台在住。MCP、MCSE、Java、Oracleなど資格保有数は50以上あり、様々な技術に精通している（つもり）。2014年にMicrosoft MVP for Microsoft Azureを受賞しましたが、コンテナが動けばAWS、GCPなど別け隔てなくクラウドを愛しています。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b tag_6fb84fba2d74a5bf00923796420d4a8f  sh_14 sm_20 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65764]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65764" />              <input type="hidden" name="box_checkin_manager_3052739_65764_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65764" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2T2</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                            <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">改めてDockerfileのベストプラクティスを振り返ろう - 林 如弥（オイシックス・ラ・大地）／GitOpsではじめるKubernetes CI/CD Pipeline - 遠藤 耕平（TBD）※ショートセッション2本立て</p>
+                  <div class="d"><p>Dockerfileのベストプラクティスをおさらいし、無駄の少ないコンテナイメージ作成のための方法を考えます。これからコンテナを始めたい方、またはとりあえずコンテナは触っているという方にコンテナイメージ作成のポイントをお伝えしたいです。Kubernetesによるコンテナ運用の話題がホットな今だからこそあえて振り返ります。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/2e568ccc958910aff93cca509fb3d666387924fb.png" width="200" class="mce-img" /><br />―林 如弥<span>（</span>Yukiya Hayashi<span>）</span>SRE<span> </span>オイシックス・ラ・大地株式会社<br />インフラエンジニアとして10年ほどキャリアを詰み、2018年4月から新鮮で安心な野菜をお届けする会社でSREとして活動を始めました。繰り返しや手間の多い作業を技術で減らしていく日々に喜びを覚える毎日です。</p>
+<p>---</p>
+<p>Kubernetesへのデプロイはどうしていますか？ manifestはGit管理されていますか？ 非コンテナ環境で培った「Gitを中心としたCI/CD Pipeline」をKubernetesで活かすにはどうしたらよいか、その課題を解決してくれる「GitOps」とは何なのか、どのようにGitOpsを実現していくのかについてお話します。<br /><br />―遠藤 耕平<span>（</span>Kohei Endo<span>）</span>インフラエンジニア</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_1e8455480ff3fa604cf3a242b4b69320  sh_15 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="15:40"
+            data-end-time="16:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65767]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65767" />              <input type="hidden" name="box_checkin_manager_3052739_65767_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65767" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2T3</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    15:40<span>-16:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_1e8455480ff3fa604cf3a242b4b69320"><em>container runtime</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">CRIUの概要とその活用 - 未来のコンテナ技術について - 近藤 宇智朗（GMOペパボ）</p>
+                  <div class="d"><p>本セッションでは、次に注目されるコンテナ技術として、プロセスやコンテナのCheckpoint/Restoreを行うCRIUのお話をします。CRIUを用いると、コンテナのライブマイグレーションや、事前作成したコールドイメージを使った高速起動を実現することができます。今回は、CRIUの概要のほか、内部実装や個別の機能に触れつつCRIUの具体的活用シーンの解説も行います。Docker等との連携も徐々に広まりつつあるCRIUに、いち早くキャッチアップしましょう。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/b53a699f68bd58f980d3f398218b990b09e2fd14.jpg" width="200" class="mce-img" /><br />―近藤 宇智朗<span>（</span>Uchio Kondo<span>）</span>技術基盤チーム シニアプリンシパル <span> </span>GMOペパボ株式会社福岡在住。GMOペパボ技術基盤チームに所属、直近ではロリポップ！マネージドクラウド(mc.lolipop.jp)にアーキテクトとして関わる。また、当該サービスで利用するコンテナランタイム「Haconiwa」(github.com/haconiwa/haconiwa)を自作しOSSとして公開していたりもする。技術コミュニティではRubyコミュニティなどによく出没するが、今日はコンテナの友達を増やしたい。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_16 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="16:40"
+            data-end-time="17:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65770]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65770" />              <input type="hidden" name="box_checkin_manager_3052739_65770_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65770" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2T4</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    16:40<span>-17:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_73cac1f589e0651758f45daa91370f13"><em>orchestration</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">Kubernetesは形式手法の夢を見るか？ - チェシャ猫（ProofCafe）</p>
+                  <div class="d"><p>本発表では、数理的手法を用いて Kubernetes の設定を検証する試みについてお話しします。Kubernetes は多数のリソースが協調動作している関係上、どこかにおかしな設定が紛れ込んでしまうと「何故か動かない」という状況に陥りがちです。そこで今回は、Kubernetes の挙動を制約の集合としてモデル化し、設定との論理的な整合性を自動で検証する手法を提案します。提案手法を用いることで、例えば実際に ping を打たなくても ping が通ることを確認できるといった、現物に依存しない検証が可能になります。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/ac9772b0317093cb7f9a668e548399c4a2f71e12.png" width="200" class="mce-img" /><br />―チェシャ猫<span>（</span>Cheshire Cat<span>）</span>TBD<span> </span>ProofCafe</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_6797295aeeb541d3d716e337f11e159c  sh_17 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="17:40"
+            data-end-time="18:20"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65772]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65772" />              <input type="hidden" name="box_checkin_manager_3052739_65772_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65772" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2T5</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    17:40<span>-18:20</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_6797295aeeb541d3d716e337f11e159c"><em>observability</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">OpenCensusとJaegerで分散トレーシングを見てみよう - Yoshida（TBD）</p>
+                  <div class="d"><p>マイクロサービス化されたアプリケーションでは、パフォーマンス測定の一つとして分散トレーシングが挙げられます。APIサーバを構築した際に、他のサービスとのやり取りを含め全体のパフォーマンスを可視化するには、分散トレーシングの仕組みに載せる必要が出てきます。そこで、OpenCensusとJaegerを用いて、Akka HTTPのAPIサーバを例に分散トレーシングの可視化を紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/1af75e54ae7fe57a0dd5baf8e6eaac2244cb377f.jpg" width="200" class="mce-img" /><br />―Yoshida<span> </span>データエンジニア</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+          <div class="hallCol">
+              <h4 class="hallTitle"><span>Room B（1F）</span></h4>
+            <div
+            class="box normal heading    sh_11 sm_0 min_40"
+            data-main-category=""
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="11:00"
+            data-end-time="11:40"
+            >
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2BA</span></h3>
+                  <ul class="hidden-data">
+                                        </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    11:00<span>-11:40</span>
+                    <b class="boxTagContainer">
+                                          </b>
+                  </p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">(TBD)</p>
+                  <div class="d"></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_279710f199ae609ebb847d6e9736b552  sh_12 sm_0 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="12:00"
+            data-end-time="12:40"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65526]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65526" />              <input type="hidden" name="box_checkin_manager_3052739_65526_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65526" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2BL</span>スポンサーセッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    12:00<span>-12:40</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_279710f199ae609ebb847d6e9736b552"><em>service mesh</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">マイクロサービスの高可用性：Ingress, サービスメッシュの世界におけるロードバランシング - TBD（NGINX Inc.）※ランチセッション</p>
+                  <div class="d"><p>マイクロサービスの世界において一つ確実に言えることは、これらの新しいアーキテクチャはネットワークとアプリケーションのトラフィックを減らすことはないということです。 むしろ、仮想的なマイクロサービスの間を行き来するアプリケーショントラフィックの量は、新しいサービスがオンラインに登場するごとに指数関数的に増加します。</p>
+<p>コントロールプレーンを介したAPIとサービスコントロールのトラフィック、管理プレーン上での予定されたトラフィックやポリシー・ルーティング、 データプレーン上のイングレスとコンテナからコンテナへのトラフィック...サービス配信が敏速になればなるほど、通信するためのデータの取り扱いが複雑になります。</p>
+<p>このプレゼンテーションでは、アプリケーションのパフォーマンスと可用性の中核部分を犠牲にすることなく、マイクロサービスアプリケーションのトラフィックを管理、制御、提供するために有効なソリューションについてご説明します。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_24cd171062c9ddcbe160a9b181cb3cb7 cat_ae99644a27870d1e38811bb0637169b4 cat_618b1aa4770c736f985b2c0cd0781c2c tag_1e8455480ff3fa604cf3a242b4b69320  sh_13 sm_20 min_40"
+            data-main-category="cat_24cd171062c9ddcbe160a9b181cb3cb7"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="13:20"
+            data-end-time="14:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65531]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65531" />              <input type="hidden" name="box_checkin_manager_3052739_65531_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65531" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2B1</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_24cd171062c9ddcbe160a9b181cb3cb7"><p><span>Advanced - 上級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    13:20<span>-14:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_1e8455480ff3fa604cf3a242b4b69320"><em>container runtime</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">runcだけじゃないコンテナlow level runtime徹底比較 - 長谷川 誠（サイバーエージェント）</p>
+                  <div class="d"><p>v18.04 ではコンテナ runtime についてhigh level runtime (docker/containerd/cri-o) とlow level runtime(runc/runv/kata-runtime) の比較を行いましたが、最近では更に gVisor(runsc) や nabla-containers(runnc) や runq(runq) 等次々と新しい low level runtime が出てきました。</p>
+<p>本セッションでは様々な low level runtime の性能や機能比較を行い、どのような用途で使ったらいいのかを検討します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/ee5daca903cdb97098eec7a24ed161e5e1e9bb58.png" width="200" class="mce-img" /><br />―長谷川 誠<span>（</span>Makoto Hasegawa<span>）</span>インフラエンジニア<span> </span>株式会社サイバーエージェント<br />アドテク本部所属。プライベートクラウドの構築等を担当しながらコンテナ環境のプライベートサービスを運用中。/ CKA (#150) / CKAD (#5)</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+            <div
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 tag_8966f9c1d8cdeccf5968a3490eb2682b  sh_14 sm_20 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
+            data-full-message=""
+            data-day="2018-12-05"
+            data-start-time="14:20"
+            data-end-time="15:00"
+            >
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3052739_65765]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3052739_65765" />              <input type="hidden" name="box_checkin_manager_3052739_65765_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3052739_65765" class="boxTicket"/>
+            
+              <div class="boxBody">
+              <div class="detail">
+              <div class="container">
+              <div class="inner">
+                <div class="head">
+                  <a href="javascript:void(0)">&nbsp;</a>
+                  <h3><span>2B2</span>公募セッション</h3>
+                  <ul class="hidden-data">
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                                            </ul>
+                </div><!-- /head -->
+                <div class="cap clearfix">
+                  <p>
+                    14:20<span>-15:00</span>
+                    <b class="boxTagContainer">
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                                                </b>
+                  </p>
+                                    <p class="s">選択済</p>
+                  <p class="full">満席</p>
+                                  </div><!-- /cap -->
+
+                <div class="body clearfix">
+                                  <p class="t">IoTのエッジにもコンテナがやってきた - 大溝 桂（日本マイクロソフト）</p>
+                  <div class="d"><p>コンテナってKuberentesなどのオーケストレーションと合わせて利用するイメージがありますが、IoTのエッジもコンテナ化するとたくさんエッジ側のモジュールの管理などが便利になります。kuberentesを利用したエッジデバイスへのコンテナのデプロイの仕組みを紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/2e410b47c30710cd93c2aafba531823cc6e15169.jpg" width="200" class="mce-img" /><br />―大溝 桂<span>（</span>Kei Omizo<span>）</span>IoT Technology Solution Professional<span> </span>日本マイクロソフト<br />Sun MicrosystemsにてC言語/Java言語を利用した基幹業務システム開発や運用支援などコンサルティングを担当。その後、Red Hatでは、OpenShiftのエバンジェリストとしてPaaS/DevOpsなどを推進。現在は、マイクロソフトのグローバルブラックベルトチームで、IoTの技術を担当している。</p></div>
+                                  </div><!-- /body -->
+              </div></div></div></div><!-- /boxBody -->
+            </div><!-- /box -->
+
+          </div><!-- /hallCol -->
+        </div><!-- /timetable -->
+      </div><!-- /timeTableBody -->
+    </div><!-- /timeTableBlock -->
+
+  </div><!-- /selectSessionBody -->
+</div><!-- /selectSession -->
+
+</form>
+
+<!-- /page/pageW1 --></div></div>
+
+
+<!-- /LW/LW1 --></div></div>
+
+
+<img src="//sync.dmp.fout.jp/store/?id=7180&mt=151&uaid=d774d65c862f0c0b61c68db52069ef06" width="1" height="1" style="display:none"/>
+<!-- Start of Async HubSpot Analytics Code -->
+    <script type="text/javascript">
+        (function(d,s,i,r) {
+            if (d.getElementById(i)){return;}
+            var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+            n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/357628.js';
+            e.parentNode.insertBefore(n, e);
+        })(document,"script","hs-analytics",300000);
+    </script>
+<!-- End of Async HubSpot Analytics Code -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d029cc0678","applicationID":"33321123","transactionName":"MVYEZhBTC0ZRV0YNXQgcJ1EWWwpbH0RHBl4PQA5XBncTUF5AHRdXFUAPXQx8AEI=","queueTime":0,"applicationTime":910,"atts":"HREHEFhJGEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
