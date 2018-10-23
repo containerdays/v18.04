@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
 <meta name="title" content="JapanContainerDays v18.12｜EventRegist（イベントレジスト）" />
 <meta name="keywords" content="JapanContainerDays v18.12,イベントレジスト,イベレジ,Event,Regist,イベント,event,イベント作成,チケット発行,イベント集金" />
 <meta name="description" content="「JapanContainerDays v18.12」の告知ページです。" />
@@ -269,7 +269,7 @@ __multiSetting = 0;
 </script>
 <div id="pageW1" class="APkg">
 
-<form name="order" method="post" action="https://eventregist.com/e/containerdays1812/d45831c8e1ba60478438f28726ca0452/sessionNew"><input type="hidden" name="temp_attendee[id]" value="3053270" id="temp_attendee_id" /><input type="hidden" name="temp_attendee[_csrf_token]" value="7d7c05338b5b6422a21db8706e28e43c" id="temp_attendee__csrf_token" />
+<form name="order" method="post" action="https://eventregist.com/e/containerdays1812/69aeb6c5014170ad9b273ceba7081867/sessionNew"><input type="hidden" name="temp_attendee[id]" value="3092728" id="temp_attendee_id" /><input type="hidden" name="temp_attendee[_csrf_token]" value="d0208c87dce8b96a494b7b939dfd496a" id="temp_attendee__csrf_token" />
 
 
 <div id="header_nav" class="_tableWidth">
@@ -367,8 +367,8 @@ __multiSetting = 0;
             data-start-time="09:40"
             data-end-time="12:10"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65316]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65316" />              <input type="hidden" name="box_checkin_manager_3053270_65316_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65316" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65316]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65316" />              <input type="hidden" name="box_checkin_manager_3092728_65316_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65316" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -401,17 +401,25 @@ __multiSetting = 0;
                                   </div><!-- /cap -->
 
                 <div class="body clearfix">
-                                  <p class="t">Microservices on Kubernetes at Mercari - 中島 大一（Mercari）／Kubernetesによる機械学習基盤への挑戦 - 谷脇 大輔（Preferred Networks）／LINEエンジニアを支えるCaaS基盤の今とこれから - 西脇 雄基（LINE）／Cloud Nativeの未来とIBMの取組み (仮) - 斎藤 和史（IBM）／この他にも数名ゲストスピーカーを調整中</p>
-                  <div class="d"><h2>Microservices on Kubernetes at Mercari</h2>
+                                  <p class="t">TBD（CNCF）／Microservices on Kubernetes at Mercari（Mercari）／Kubernetesによる機械学習基盤への挑戦（Preferred Networks）／LINEエンジニアを支えるCaaS基盤の今とこれから（LINE）／Cloud Nativeの未来とIBMの取組み (仮)（IBM）／クラウドネイティブで作る、新しいクルマの世界（デンソー）／TBD（ZOZOテクノロジーズ）</p>
+                  <div class="d"><h2>TBD</h2>
+<p><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/d397f833c5cac26cb0708935cb6fde5c3e118c02.jpg" width="200" class="mce-img" /><br />―Chris Aniszczyk<span> </span>COO of Cloud Native Computing Foundation (CNCF) and Executive Director of Open Container Initiative (OCI)<br />Chris Aniszczyk is an engineer by trade with a passion for open source and building communities. At Twitter, he created their open source program and led their open source efforts. For many years he served on the Eclipse Foundation's Board of Directors representing the committer community and the Java Community Process Executive Committee. In a previous life, he bootstrapped a consulting company, made many mistakes, lead and hacked on many eclipse.org and Linux related projects. He is now the COO of the Cloud Native Computing Foundation and VP of Developer Programs at The Linux Foundation.<br /><br /></p>
+<h2>Microservices on Kubernetes at Mercari</h2>
 <p>Mercariではサービスと組織の拡大に合わせてMonolithアーキテクチャからMicroservicesアーキテクチャへの移行を進めています．我々はこのMicroservicesアーキテクチャのメインの基盤としてKubernetesを採用しています．本セッションではMicroservicesのための基盤という観点でどのようにKubernetesを活用しているかについて紹介します</p>
 <p><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/455f64c7f07197373fa3728a32e317fc42e9190e.jpg" width="200" class="mce-img" /><br />―中島 大一（Taichi Nakashima）Tech Lead<span> </span>Mercari<br />Taichi Nakashima (@deeeet) is a tech lead for the Microservices Platform at Mercari. Prior to Mercari, he was a software engineer at Japanese E-commerce company, working on building internal Platform-as-a-Service. He is Gopher and co-authoer of &ldquo;みんなのGo言語&rdquo; (Japanese Golang book).<br /><br /></p>
 <h2>Kubernetesによる機械学習基盤への挑戦</h2>
 <p>Preferred Networksでは1000個以上のGPUとInfiniBandからなるオンプレミスのクラスターを自社で構築しており、研究者が様々な目的、リソース量、実行時間の機械学習ジョブをKubernetes上で実行して研究成果を出しています。KubernetesはKubeflowの登場など、機械学習基盤としても非常に注目されている一方で、現実的には未だ発展途上となっています。本講演では機械学習基盤としてのKubernetesの導入理由、その実用性と将来性、Preferred Networksの挑戦についてお話しします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/38b23c22d4fbd0ef378036c206b07346a647ea8b.jpg" width="200" class="mce-img" /><br />―谷脇 大輔<span>（</span>DAISUKE TANIWAKI<span>）</span>Engineer<span> </span>Preferred Networks<br />トレンドマイクロにて台湾でWeb Crawler開発したのち、食べログのアメリカ展開のために渡米、帰国後はKaizen PlatformでWeb Page Optimization Platformを開発するなど、国内外の様々な場所でWeb関連の開発経験を積む。2017年4月よりPreferred Networksにて、研究者が利用する研究開発基盤での様々なシステムの導入・開発・運用に携わっている。<br /><br /></p>
 <h2>LINEエンジニアを支えるCaaS基盤の今とこれから</h2>
-<p>近年の機械学習の流行によって多くの機械学習モジュールが実サービスで運用されています。LINE Clovaでも多くの機械学習モジュールが可動しています。機械学習における「学習」まわりのツールが充実してきた一方で、構築した機械学習モジュールの「運用」まわりのツールは多くありません。本セッションでは、Kubernetes上で動作する機械学習モジュールの配信＆管理基盤Druckerをご紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/7227a848ac34c3158c1f053309edf87d62280940.png" width="200" class="mce-img" /><br />―西脇 雄基（Yuki Nishiwaki）Software Engineer LINE Corporation<br />2017年12月にLINE株式会社に入社<br />LINEのインフラで利用しているOSS周りの業務を中心に、OpenStackのカスタマイズ業務やKubernetes as a Serviceの開発業務に従事<br />Kubernete as a Serviceのバックエンドに採用されているRancherの解析にも注力<br /><br /></p>
+<p>LINEのPrivate Cloud運用/開発チームではインフラのスケーラビリティ、社内システム連携に特に力を入れてきましたが、今年から全社的なコンテナ活用基盤の導入にも、力を入れています。本セッションでは、Production ReadyなRancher2.0ベースのKubernetes as a Serviceを始めとする、弊社Private Cloudにおけるコンテナ活用事例についてご紹介します。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/7227a848ac34c3158c1f053309edf87d62280940.png" width="200" class="mce-img" /><br />―西脇 雄基（Yuki Nishiwaki）Software Engineer LINE Corporation<br />2017年12月にLINE株式会社に入社<br />LINEのインフラで利用しているOSS周りの業務を中心に、OpenStackのカスタマイズ業務やKubernetes as a Serviceの開発業務に従事<br />Kubernete as a Serviceのバックエンドに採用されているRancherの解析にも注力<br /><br /></p>
 <h2>Cloud Nativeの未来とIBMの取組み (仮)</h2>
 <p><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/308d86a32653cbd0d6cdf09f43c40fec05ab987b.jpg" width="200" class="mce-img" /><br />―斎藤 和史<span>（</span>Kazufumi Saito）Presales Engineer&nbsp;IBM<br /><span>2013年 IBM 入社。アプリケーションサーバーやモバイル基盤、API管理基盤、PaaSなどのサーバーサイドのバックグラウンドを持つプリセールスエンジニア。現在はクラウド対応やクラウドネイティブをベースにお客様のデジタル変革を支援している。またCNCF公式のCloud Native Meetup Tokyoや、Cloud Native Developers JPなどのコミュニティ運営に従事し、Kubernetesユーザーの拡大を目的とした活動に注力している。</span></p>
-<p><br />この他にも数名ゲストスピーカーを調整中、詳細は追ってアップデートします。</p></div>
+<h2><br class="Apple-interchange-newline" />クラウドネイティブで作る、新しいクルマの世界</h2>
+<p>自動運転、コネクティッドなどの技術革新にともない、自動車業界は今まさに製造業からサービス業への「100年に1度のデジタル変革期」。この変革に挑戦すべく、デンソーではアジャイルによる新しい移動サービス(Mobility as a Service:MaaS)の開発と、MaaSを支えるコネクティッド基盤の開発を推進しています。本講演では、クラウドネイティブを活用したMaaS開発促進の取り組みについてご紹介いたします。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/15a725b5d199bd28f38d4908f82f865520b75bcf.png" width="200" class="mce-img" /><br />―小泉 清一<span>（</span>Seiichi Koizumi<span>）</span>プロジェクトマネージャー<span> </span>株式会社デンソー<br />2001年　NEC中央研究所にてWebサービスの研究推進<br />2008年　UC Berkeley EECS客員研究員を経て、SDN/クラウド統合オーケストレーションの研究開発に従事<br />2017年　デンソーに入社し、モビリティIoT開発を推進</p>
+<div>
+<h2><br class="Apple-interchange-newline" />TBD</h2>
+<p><br />―TBD ZOZOテクノロジーズ<br /><br /></p>
+<div></div>
+</div></div>
                                   </div><!-- /body -->
               </div></div></div></div><!-- /boxBody -->
             </div><!-- /box -->
@@ -439,8 +447,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65318]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65318" />              <input type="hidden" name="box_checkin_manager_3053270_65318_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65318" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65318]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65318" />              <input type="hidden" name="box_checkin_manager_3092728_65318_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65318" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -492,8 +500,8 @@ __multiSetting = 0;
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65323]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65323" />              <input type="hidden" name="box_checkin_manager_3053270_65323_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65323" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65323]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65323" />              <input type="hidden" name="box_checkin_manager_3092728_65323_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65323" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -561,8 +569,8 @@ __multiSetting = 0;
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65456]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65456" />              <input type="hidden" name="box_checkin_manager_3053270_65456_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65456" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65456]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65456" />              <input type="hidden" name="box_checkin_manager_3092728_65456_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65456" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -612,8 +620,8 @@ __multiSetting = 0;
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65460]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65460" />              <input type="hidden" name="box_checkin_manager_3053270_65460_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65460" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65460]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65460" />              <input type="hidden" name="box_checkin_manager_3092728_65460_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65460" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -726,8 +734,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65320]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65320" />              <input type="hidden" name="box_checkin_manager_3053270_65320_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65320" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65320]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65320" />              <input type="hidden" name="box_checkin_manager_3092728_65320_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65320" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -769,8 +777,8 @@ __multiSetting = 0;
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65324]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65324" />              <input type="hidden" name="box_checkin_manager_3053270_65324_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65324" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65324]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65324" />              <input type="hidden" name="box_checkin_manager_3092728_65324_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65324" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -813,8 +821,8 @@ __multiSetting = 0;
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65457]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65457" />              <input type="hidden" name="box_checkin_manager_3053270_65457_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65457" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65457]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65457" />              <input type="hidden" name="box_checkin_manager_3092728_65457_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65457" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -864,9 +872,8 @@ __multiSetting = 0;
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3059157_65461]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3059157_65461" />              <input type="hidden" name="box_checkin_manager_3059157_65461_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3059157_65461" class="boxTicket"/>
-
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65461]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65461" />              <input type="hidden" name="box_checkin_manager_3092728_65461_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65461" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1046,8 +1053,8 @@ __multiSetting = 0;
             data-start-time="18:40"
             data-end-time="20:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65468]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65468" />              <input type="hidden" name="box_checkin_manager_3053270_65468_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65468" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65468]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65468" />              <input type="hidden" name="box_checkin_manager_3092728_65468_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65468" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1080,15 +1087,15 @@ __multiSetting = 0;
           <div class="hallCol">
               <h4 class="hallTitle"><span>Room B（1F）</span></h4>
             <div
-            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 tag_cc2789a3b2238657f4e7148e6462c802  sh_12 sm_20 min_40"
+            class="box normal full cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 tag_cc2789a3b2238657f4e7148e6462c802  sh_12 sm_20 min_40"
             data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
             data-full-message=""
             data-day="2018-12-04"
             data-start-time="12:20"
             data-end-time="13:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65317]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65317" />              <input type="hidden" name="box_checkin_manager_3053270_65317_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65317" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65317]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65317" />              <input type="hidden" name="box_checkin_manager_3092728_65317_sub" value="2" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65317" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1128,8 +1135,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65321]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65321" />              <input type="hidden" name="box_checkin_manager_3053270_65321_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65321" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65321]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65321" />              <input type="hidden" name="box_checkin_manager_3092728_65321_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65321" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1171,8 +1178,8 @@ __multiSetting = 0;
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65325]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65325" />              <input type="hidden" name="box_checkin_manager_3053270_65325_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65325" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65325]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65325" />              <input type="hidden" name="box_checkin_manager_3092728_65325_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65325" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1215,8 +1222,8 @@ __multiSetting = 0;
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65458]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65458" />              <input type="hidden" name="box_checkin_manager_3053270_65458_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65458" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65458]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65458" />              <input type="hidden" name="box_checkin_manager_3092728_65458_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65458" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1256,8 +1263,8 @@ __multiSetting = 0;
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65462]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65462" />              <input type="hidden" name="box_checkin_manager_3053270_65462_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65462" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65462]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65462" />              <input type="hidden" name="box_checkin_manager_3092728_65462_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65462" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1298,8 +1305,8 @@ __multiSetting = 0;
             data-start-time="17:40"
             data-end-time="18:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65754]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65754" />              <input type="hidden" name="box_checkin_manager_3053270_65754_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65754" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65754]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65754" />              <input type="hidden" name="box_checkin_manager_3092728_65754_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65754" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1338,15 +1345,13 @@ __multiSetting = 0;
           <div class="hallCol">
               <h4 class="hallTitle"><span>Room C（1F）</span></h4>
             <div
-            class="box normal    sh_9 sm_40 min_150"
+            class="box normal heading    sh_9 sm_40 min_150"
             data-main-category=""
             data-full-message=""
             data-day="2018-12-04"
             data-start-time="09:40"
             data-end-time="12:10"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65467]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65467" />              <input type="hidden" name="box_checkin_manager_3053270_65467_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65467" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1364,8 +1369,6 @@ __multiSetting = 0;
                     <b class="boxTagContainer">
                                           </b>
                   </p>
-                                    <p class="s">選択済</p>
-                  <p class="full">満席</p>
                                   </div><!-- /cap -->
 
                 <div class="body clearfix">
@@ -1383,8 +1386,8 @@ __multiSetting = 0;
             data-start-time="12:20"
             data-end-time="13:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65319]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65319" />              <input type="hidden" name="box_checkin_manager_3053270_65319_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65319" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65319]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65319" />              <input type="hidden" name="box_checkin_manager_3092728_65319_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65319" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1426,8 +1429,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65322]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65322" />              <input type="hidden" name="box_checkin_manager_3053270_65322_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65322" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65322]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65322" />              <input type="hidden" name="box_checkin_manager_3092728_65322_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65322" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1479,8 +1482,8 @@ __multiSetting = 0;
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3063734_65326]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3063734_65326" />              <input type="hidden" name="box_checkin_manager_3063734_65326_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3063734_65326" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65326]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65326" />              <input type="hidden" name="box_checkin_manager_3092728_65326_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65326" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1523,8 +1526,8 @@ __multiSetting = 0;
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65459]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65459" />              <input type="hidden" name="box_checkin_manager_3053270_65459_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65459" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65459]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65459" />              <input type="hidden" name="box_checkin_manager_3092728_65459_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65459" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1603,8 +1606,8 @@ __multiSetting = 0;
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65463]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65463" />              <input type="hidden" name="box_checkin_manager_3053270_65463_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65463" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65463]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65463" />              <input type="hidden" name="box_checkin_manager_3092728_65463_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65463" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1641,8 +1644,8 @@ __multiSetting = 0;
             data-start-time="17:40"
             data-end-time="18:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65755]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65755" />              <input type="hidden" name="box_checkin_manager_3053270_65755_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65755" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65755]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65755" />              <input type="hidden" name="box_checkin_manager_3092728_65755_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65755" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1705,8 +1708,8 @@ __multiSetting = 0;
             data-start-time="11:00"
             data-end-time="11:40"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65469]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65469" />              <input type="hidden" name="box_checkin_manager_3053270_65469_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65469" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65469]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65469" />              <input type="hidden" name="box_checkin_manager_3092728_65469_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65469" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1752,8 +1755,8 @@ __multiSetting = 0;
             data-start-time="12:00"
             data-end-time="12:40"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65524]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65524" />              <input type="hidden" name="box_checkin_manager_3053270_65524_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65524" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65524]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65524" />              <input type="hidden" name="box_checkin_manager_3092728_65524_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65524" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1810,8 +1813,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65527]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65527" />              <input type="hidden" name="box_checkin_manager_3053270_65527_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65527" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65527]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65527" />              <input type="hidden" name="box_checkin_manager_3092728_65527_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65527" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1853,8 +1856,8 @@ __multiSetting = 0;
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65534]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65534" />              <input type="hidden" name="box_checkin_manager_3053270_65534_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65534" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65534]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65534" />              <input type="hidden" name="box_checkin_manager_3092728_65534_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65534" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1909,8 +1912,8 @@ __multiSetting = 0;
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65535]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65535" />              <input type="hidden" name="box_checkin_manager_3053270_65535_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65535" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65535]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65535" />              <input type="hidden" name="box_checkin_manager_3092728_65535_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65535" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1954,8 +1957,8 @@ __multiSetting = 0;
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65536]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65536" />              <input type="hidden" name="box_checkin_manager_3053270_65536_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65536" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65536]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65536" />              <input type="hidden" name="box_checkin_manager_3092728_65536_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65536" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -1985,7 +1988,7 @@ __multiSetting = 0;
                 <div class="body clearfix">
                                   <p class="t">コンテナプラットフォームとしてのApache Mesos 〜ユーザ事例を通して学ぶなぜなにMesos〜 光野 達朗（Mesos User Group Tokyo）</p>
                   <div class="d"><p>Apache Mesosを使うことで、我々は分散環境をあたかも一つの巨大な計算機のように扱うことが可能になります。本セッションでは、コンテナベースのアプリケーションを開発・運用する方々に向けて、そんなApache Mesosの魅力をお伝えいたします。</p>
-<p>Apache Mesosとは一体何なのか・コンテナプラットフォームとして何が嬉しいのかについて最新の動向を交えご紹介した後、具体的なユーザ事例として、実際に本番稼働中のシステムを取り上げます。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/574a122e846d3672b4adce8f58c22597d5a083b0.png" width="200" class="mce-img" /><br />―光野 達朗<span>（</span>Tatsuro Mitsuno<span>）</span>SREエンジニア テックリード<span> </span>株式会社ＺＯＺＯテクノロジーズ/Mesos User Group Tokyo<br />ヤフー株式会社にてヤフオク!・広告の開発に携わる。2016年からは株式会社VASILY、法人統合に伴い2018年4月から現職。現在はSREエンジニアとして、日々サービスの信頼性向上に努める。VASILY時代の取り組みから縁あってMesos User Group Tokyoに参加。本番環境での実践ネタ担当。ウィスキーと葉巻が好き。愛してる。</p></div>
+<p>Apache Mesosとは一体何なのか・コンテナプラットフォームとして何が嬉しいのかについて最新の動向を交えご紹介した後、具体的なユーザ事例として、実際に本番稼働中のシステムを取り上げます。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/574a122e846d3672b4adce8f58c22597d5a083b0.png" width="200" class="mce-img" /><br />―光野 達朗<span>（</span>Tatsuro Mitsuno<span>）SREエンジニア テックリード</span><span>&nbsp;株式会社ＺＯＺＯテクノロジーズ/Mesos User Group Tokyo</span><br />ヤフー株式会社にてヤフオク!・広告の開発に携わる。2016年からは株式会社VASILY、法人統合に伴い2018年4月から現職。現在はSREエンジニアとして、日々サービスの信頼性向上に努める。VASILY時代の取り組みから縁あってMesos User Group Tokyoに参加。本番環境での実践ネタ担当。ウィスキーと葉巻が好き。愛してる。</p></div>
                                   </div><!-- /body -->
               </div></div></div></div><!-- /boxBody -->
             </div><!-- /box -->
@@ -1998,8 +2001,8 @@ __multiSetting = 0;
             data-start-time="17:40"
             data-end-time="18:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65537]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65537" />              <input type="hidden" name="box_checkin_manager_3053270_65537_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65537" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65537]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65537" />              <input type="hidden" name="box_checkin_manager_3092728_65537_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65537" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2039,8 +2042,8 @@ __multiSetting = 0;
             data-start-time="11:00"
             data-end-time="11:40"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65470]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65470" />              <input type="hidden" name="box_checkin_manager_3053270_65470_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65470" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65470]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65470" />              <input type="hidden" name="box_checkin_manager_3092728_65470_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65470" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2082,8 +2085,8 @@ __multiSetting = 0;
             data-start-time="12:00"
             data-end-time="12:40"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65525]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65525" />              <input type="hidden" name="box_checkin_manager_3053270_65525_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65525" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65525]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65525" />              <input type="hidden" name="box_checkin_manager_3092728_65525_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65525" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2123,8 +2126,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65529]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65529" />              <input type="hidden" name="box_checkin_manager_3053270_65529_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65529" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65529]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65529" />              <input type="hidden" name="box_checkin_manager_3092728_65529_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65529" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2161,15 +2164,15 @@ __multiSetting = 0;
             </div><!-- /box -->
 
             <div
-            class="box normal    sh_14 sm_20 min_40"
-            data-main-category=""
+            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b tag_6fb84fba2d74a5bf00923796420d4a8f  sh_14 sm_20 min_40"
+            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
             data-full-message=""
             data-day="2018-12-05"
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65763]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65763" />              <input type="hidden" name="box_checkin_manager_3053270_65763_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65763" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65764]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65764" />              <input type="hidden" name="box_checkin_manager_3092728_65764_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65764" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2177,37 +2180,45 @@ __multiSetting = 0;
               <div class="inner">
                 <div class="head">
                   <a href="javascript:void(0)">&nbsp;</a>
-                  <h3><span>2E2</span>コミュニティセッション</h3>
+                  <h3><span>2E2</span>公募セッション</h3>
                   <ul class="hidden-data">
-                                        </ul>
+                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
                 </div><!-- /head -->
                 <div class="cap clearfix">
                   <p>
                     14:20<span>-15:00</span>
                     <b class="boxTagContainer">
-                                          </b>
+                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
+                                            <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
+                                                                </b>
                   </p>
                                     <p class="s">選択済</p>
                   <p class="full">満席</p>
                                   </div><!-- /cap -->
 
                 <div class="body clearfix">
-                                  <p class="t">TBD - TBD（Bluemix Users Group）</p>
-                  <div class="d"></div>
+                                  <p class="t">改めてDockerfileのベストプラクティスを振り返ろう - 林 如弥（オイシックス・ラ・大地）／GitOpsではじめるKubernetes CI/CD Pipeline - 遠藤 耕平（LINE）※ショートセッション2本立て</p>
+                  <div class="d"><p>Dockerfileのベストプラクティスをおさらいし、無駄の少ないコンテナイメージ作成のための方法を考えます。これからコンテナを始めたい方、またはとりあえずコンテナは触っているという方にコンテナイメージ作成のポイントをお伝えしたいです。Kubernetesによるコンテナ運用の話題がホットな今だからこそあえて振り返ります。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/2e568ccc958910aff93cca509fb3d666387924fb.png" width="200" class="mce-img" /><br />―林 如弥<span>（</span>Yukiya Hayashi<span>）</span>SRE<span> </span>オイシックス・ラ・大地株式会社<br />インフラエンジニアとして10年ほどキャリアを詰み、2018年4月から新鮮で安心な野菜をお届けする会社でSREとして活動を始めました。繰り返しや手間の多い作業を技術で減らしていく日々に喜びを覚える毎日です。</p>
+<p>---</p>
+<p>Kubernetesへのデプロイはどうしていますか？ manifestはGit管理されていますか？ 非コンテナ環境で培った「Gitを中心としたCI/CD Pipeline」をKubernetesで活かすにはどうしたらよいか、その課題を解決してくれる「GitOps」とは何なのか、どのようにGitOpsを実現していくのかについてお話します。<br /><br />―遠藤 耕平<span>（</span>Kohei Endo<span>）</span>インフラエンジニア</p></div>
                                   </div><!-- /body -->
               </div></div></div></div><!-- /boxBody -->
             </div><!-- /box -->
 
             <div
-            class="box normal    sh_15 sm_40 min_40"
-            data-main-category=""
+            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_6fb84fba2d74a5bf00923796420d4a8f  sh_15 sm_40 min_40"
+            data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
             data-full-message=""
             data-day="2018-12-05"
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65766]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65766" />              <input type="hidden" name="box_checkin_manager_3053270_65766_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65766" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65766]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65766" />              <input type="hidden" name="box_checkin_manager_3092728_65766_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65766" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2217,21 +2228,27 @@ __multiSetting = 0;
                   <a href="javascript:void(0)">&nbsp;</a>
                   <h3><span>2E3</span>特別企画</h3>
                   <ul class="hidden-data">
-                                        </ul>
+                                                            <li class="cat_f02f4bb897b8adb1d0ce7996fc83fa04"><p><span>Intermediate - 中級者</span></p></li>
+                                        <li class="cat_ae99644a27870d1e38811bb0637169b4"><p><span>architect - システム設計</span></p></li>
+                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
+                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
+                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
+                                                            </ul>
                 </div><!-- /head -->
                 <div class="cap clearfix">
                   <p>
                     15:40<span>-16:20</span>
                     <b class="boxTagContainer">
-                                          </b>
+                                                                  <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
+                                                                </b>
                   </p>
                                     <p class="s">選択済</p>
                   <p class="full">満席</p>
                                   </div><!-- /cap -->
 
                 <div class="body clearfix">
-                                  <p class="t">TBD - TBD（showk）</p>
-                  <div class="d"></div>
+                                  <p class="t">ユーザー参加型CI/CDの実験場「showKs」開発の舞台裏 - 太田 航平、草間 一人、吉瀬 淳一（showKs）</p>
+                  <div class="d">JKD v18.12では、ユーザー参加型CI/CDの実験場というコンセプトのもと、有志による主催者企画「showKs」を準備中です。本セッションでは開発を担当したエンジニアたちが「showKs」のアーキテクチャから開発の裏話までをお伝えします。<br /><br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/5bcb4d3fd79af1388154dd49130672b830e5c86a.jpg" width="200" class="mce-img" /><br />―太田 航平（Kohei Ota）Infrastructure Engineer ZOZO Technologies<br />英語チョットデキル系エンジニア。オンラインコミュニティ「インフラ勉強会」のAdminなどをやりつつ、勝手に人生を動かしてくれるコンピューターを夢見て生活している。<br /><br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/90fafde00ed4990a482e85724c1ce46419329ad4.png" width="200" class="mce-img" /><br />―草間 一人（Kazuto Kusama）Solutions Architect&nbsp;Pivotalジャパン<br />Pivotalジャパンにて、Pivotal Cloud FoundryのSolutions Architectを務める。通信事業者勤務時代からCloud Foundryベースのサービス開発に携わっているほか、個人活動としてPaaS勉強会の主催、日本Cloud Foundryグループの理事にも就任している。<br /><br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/a0189d4c152b093e0bc0875ff6ec03805cb82934.jpg" width="200" class="mce-img" /><br />―吉瀬 淳一<span>（</span>Junichi Yoshise<span>）</span>Lead Architect<span> </span>Hewlett Packard Enterprise<br />いろんな国のいろんな企業のCloud Native化をお手伝いしてます。Kubernetesのcontributeも地味に始めました。髪切りたい。</div>
                                   </div><!-- /body -->
               </div></div></div></div><!-- /boxBody -->
             </div><!-- /box -->
@@ -2244,8 +2261,8 @@ __multiSetting = 0;
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65769]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65769" />              <input type="hidden" name="box_checkin_manager_3053270_65769_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65769" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65769]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65769" />              <input type="hidden" name="box_checkin_manager_3092728_65769_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65769" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2286,8 +2303,8 @@ __multiSetting = 0;
             data-start-time="17:40"
             data-end-time="18:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65771]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65771" />              <input type="hidden" name="box_checkin_manager_3053270_65771_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65771" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65771]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65771" />              <input type="hidden" name="box_checkin_manager_3092728_65771_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65771" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2332,8 +2349,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65532]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65532" />              <input type="hidden" name="box_checkin_manager_3053270_65532_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65532" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65532]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65532" />              <input type="hidden" name="box_checkin_manager_3092728_65532_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65532" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2412,8 +2429,8 @@ __multiSetting = 0;
             data-start-time="11:00"
             data-end-time="12:40"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65471]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65471" />              <input type="hidden" name="box_checkin_manager_3053270_65471_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65471" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65471]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65471" />              <input type="hidden" name="box_checkin_manager_3092728_65471_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65471" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2457,8 +2474,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65530]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65530" />              <input type="hidden" name="box_checkin_manager_3053270_65530_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65530" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65530]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65530" />              <input type="hidden" name="box_checkin_manager_3092728_65530_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65530" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2492,15 +2509,15 @@ __multiSetting = 0;
             </div><!-- /box -->
 
             <div
-            class="box normal cat_cdaa1521209dcb30da56da52e3089b15 cat_1816c3644a6e6c0eb034e7c98752281d cat_6d456e69b5d95c08c3a34811cd1ed039 cat_618b1aa4770c736f985b2c0cd0781c2c tag_8966f9c1d8cdeccf5968a3490eb2682b tag_6fb84fba2d74a5bf00923796420d4a8f  sh_14 sm_20 min_40"
-            data-main-category="cat_cdaa1521209dcb30da56da52e3089b15"
+            class="box normal    sh_14 sm_20 min_40"
+            data-main-category=""
             data-full-message=""
             data-day="2018-12-05"
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65764]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65764" />              <input type="hidden" name="box_checkin_manager_3053270_65764_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65764" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65763]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65763" />              <input type="hidden" name="box_checkin_manager_3092728_65763_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65763" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2508,45 +2525,37 @@ __multiSetting = 0;
               <div class="inner">
                 <div class="head">
                   <a href="javascript:void(0)">&nbsp;</a>
-                  <h3><span>2T2</span>公募セッション</h3>
+                  <h3><span>2T2</span>コミュニティセッション</h3>
                   <ul class="hidden-data">
-                                                            <li class="cat_cdaa1521209dcb30da56da52e3089b15"><p><span>Beginner - 初級者</span></p></li>
-                                        <li class="cat_1816c3644a6e6c0eb034e7c98752281d"><p><span>developer - システム開発</span></p></li>
-                                        <li class="cat_6d456e69b5d95c08c3a34811cd1ed039"><p><span>app-developer - アプリケーション開発</span></p></li>
-                                        <li class="cat_618b1aa4770c736f985b2c0cd0781c2c"><p><span>operator/sys-admin - 運用管理/システム管理</span></p></li>
-                                                            </ul>
+                                        </ul>
                 </div><!-- /head -->
                 <div class="cap clearfix">
                   <p>
                     14:20<span>-15:00</span>
                     <b class="boxTagContainer">
-                                                                  <span class="boxTag tag_8966f9c1d8cdeccf5968a3490eb2682b"><em>containerization</em></span>
-                                            <span class="boxTag tag_6fb84fba2d74a5bf00923796420d4a8f"><em>CI/CD</em></span>
-                                                                </b>
+                                          </b>
                   </p>
                                     <p class="s">選択済</p>
                   <p class="full">満席</p>
                                   </div><!-- /cap -->
 
                 <div class="body clearfix">
-                                  <p class="t">改めてDockerfileのベストプラクティスを振り返ろう - 林 如弥（オイシックス・ラ・大地）／GitOpsではじめるKubernetes CI/CD Pipeline - 遠藤 耕平（TBD）※ショートセッション2本立て</p>
-                  <div class="d"><p>Dockerfileのベストプラクティスをおさらいし、無駄の少ないコンテナイメージ作成のための方法を考えます。これからコンテナを始めたい方、またはとりあえずコンテナは触っているという方にコンテナイメージ作成のポイントをお伝えしたいです。Kubernetesによるコンテナ運用の話題がホットな今だからこそあえて振り返ります。<br /><img src="https://er-static.s3.amazonaws.com/uploads/event_image/0cc46e8558d4bd6612119e0cf16bdbf3/2e568ccc958910aff93cca509fb3d666387924fb.png" width="200" class="mce-img" /><br />―林 如弥<span>（</span>Yukiya Hayashi<span>）</span>SRE<span> </span>オイシックス・ラ・大地株式会社<br />インフラエンジニアとして10年ほどキャリアを詰み、2018年4月から新鮮で安心な野菜をお届けする会社でSREとして活動を始めました。繰り返しや手間の多い作業を技術で減らしていく日々に喜びを覚える毎日です。</p>
-<p>---</p>
-<p>Kubernetesへのデプロイはどうしていますか？ manifestはGit管理されていますか？ 非コンテナ環境で培った「Gitを中心としたCI/CD Pipeline」をKubernetesで活かすにはどうしたらよいか、その課題を解決してくれる「GitOps」とは何なのか、どのようにGitOpsを実現していくのかについてお話します。<br /><br />―遠藤 耕平<span>（</span>Kohei Endo<span>）</span>インフラエンジニア</p></div>
+                                  <p class="t">TBD - TBD（Bluemix Users Group）</p>
+                  <div class="d"></div>
                                   </div><!-- /body -->
               </div></div></div></div><!-- /boxBody -->
             </div><!-- /box -->
 
             <div
-            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_1e8455480ff3fa604cf3a242b4b69320  sh_15 sm_40 min_40"
+            class="box normal full cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_1e8455480ff3fa604cf3a242b4b69320  sh_15 sm_40 min_40"
             data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
             data-full-message=""
             data-day="2018-12-05"
             data-start-time="15:40"
             data-end-time="16:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65767]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65767" />              <input type="hidden" name="box_checkin_manager_3053270_65767_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65767" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65767]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65767" />              <input type="hidden" name="box_checkin_manager_3092728_65767_sub" value="2" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65767" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2580,15 +2589,15 @@ __multiSetting = 0;
             </div><!-- /box -->
 
             <div
-            class="box normal cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_16 sm_40 min_40"
+            class="box normal full cat_f02f4bb897b8adb1d0ce7996fc83fa04 cat_ae99644a27870d1e38811bb0637169b4 cat_1816c3644a6e6c0eb034e7c98752281d cat_618b1aa4770c736f985b2c0cd0781c2c tag_73cac1f589e0651758f45daa91370f13  sh_16 sm_40 min_40"
             data-main-category="cat_f02f4bb897b8adb1d0ce7996fc83fa04"
             data-full-message=""
             data-day="2018-12-05"
             data-start-time="16:40"
             data-end-time="17:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65770]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65770" />              <input type="hidden" name="box_checkin_manager_3053270_65770_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65770" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65770]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65770" />              <input type="hidden" name="box_checkin_manager_3092728_65770_sub" value="2" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65770" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2630,8 +2639,8 @@ __multiSetting = 0;
             data-start-time="17:40"
             data-end-time="18:20"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65772]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65772" />              <input type="hidden" name="box_checkin_manager_3053270_65772_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65772" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65772]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65772" />              <input type="hidden" name="box_checkin_manager_3092728_65772_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65772" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2711,8 +2720,8 @@ __multiSetting = 0;
             data-start-time="12:00"
             data-end-time="12:40"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65526]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65526" />              <input type="hidden" name="box_checkin_manager_3053270_65526_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65526" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65526]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65526" />              <input type="hidden" name="box_checkin_manager_3092728_65526_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65526" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2756,8 +2765,8 @@ __multiSetting = 0;
             data-start-time="13:20"
             data-end-time="14:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65531]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65531" />              <input type="hidden" name="box_checkin_manager_3053270_65531_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65531" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65531]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65531" />              <input type="hidden" name="box_checkin_manager_3092728_65531_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65531" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2799,8 +2808,8 @@ __multiSetting = 0;
             data-start-time="14:20"
             data-end-time="15:00"
             >
-                                        <input type="hidden" name="temp_attendee[checkin_manager_3053270_65765]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3053270_65765" />              <input type="hidden" name="box_checkin_manager_3053270_65765_sub" value="0" class="boxStatus"/>
-              <input type="hidden" name="box_3053270_65765" class="boxTicket"/>
+                                        <input type="hidden" name="temp_attendee[checkin_manager_3092728_65765]" value="0" class="boxSelect" id="temp_attendee_checkin_manager_3092728_65765" />              <input type="hidden" name="box_checkin_manager_3092728_65765_sub" value="0" class="boxStatus"/>
+              <input type="hidden" name="box_3092728_65765" class="boxTicket"/>
             
               <div class="boxBody">
               <div class="detail">
@@ -2841,6 +2850,13 @@ __multiSetting = 0;
   </div><!-- /selectSessionBody -->
 </div><!-- /selectSession -->
 
+<div id="footer_nav_fixed">
+  <div class="clearfix">
+    <a class="ErBtn typeB Black2 medium2 lside mt05" href="https://eventregist.com/e/containerdays1812"><span class="arrowBack">戻る</span></a>
+    <a class="ErBtn typeB Yellow2 large2 rside" href="javascript:void(0);" onclick="choiceSession();return false;"><span class="arrowNext">次に進む<em>（内容確認）</em></span></a>
+  </div>
+</div><!-- /footer_nav_fixed -->
+
 </form>
 
 <!-- /page/pageW1 --></div></div>
@@ -2860,5 +2876,5 @@ __multiSetting = 0;
         })(document,"script","hs-analytics",300000);
     </script>
 <!-- End of Async HubSpot Analytics Code -->
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d029cc0678","applicationID":"33321123","transactionName":"MVYEZhBTC0ZRV0YNXQgcJ1EWWwpbH0RHBl4PQA5XBncTUF5AHRdXFUAPXQx8AEI=","queueTime":0,"applicationTime":908,"atts":"HREHEFhJGEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d029cc0678","applicationID":"33321123","transactionName":"MVYEZhBTC0ZRV0YNXQgcJ1EWWwpbH0RHBl4PQA5XBncTUF5AHRdXFUAPXQx8AEI=","queueTime":0,"applicationTime":492,"atts":"HREHEFhJGEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
